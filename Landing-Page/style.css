@@ -28,6 +28,19 @@ a {
     text-decoration: none;
 }
 
+p {
+    margin: 0;
+}
+
+button {
+    background: #3882F6;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 8px 20px;
+    width: 120px;
+}
+
 /* Header */
 
 #header{
@@ -38,7 +51,7 @@ a {
     align-items: flex-start;
     display: flex;
     justify-content: space-between;
-    padding: 22px 100px 0px 180px; 
+    padding: 0px 180px ; 
 }
 
 .left-logo {
@@ -60,4 +73,43 @@ a {
     height: 100px;
     padding: 0 20px;
 }
+
+/* Header Content */
+
+.header-content {
+    align-items: flex-start;
+    display: flex;
+    padding: 60px 200px 110px 193px;
+}
+
+.header-left-content {
+    display: flex;
+    flex-direction: column;
+    height: 270px;
+    justify-content: space-between;
+    width: 478px;
+}
+
+.title {
+    color: #F9FAF8;
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+.header-left-content p {
+    color: #E5E7EB;
+    font-size: 18px;
+}
+
+.header-left-content button {
+    
+}
+
+.header-content img{
+    border-radius: 20px;
+    box-shadow: 7px 0px 7px 7px rgba(0, 0, 0, 0.5);
+    height: 270px;
+    width: 520px;
+}
+
 
