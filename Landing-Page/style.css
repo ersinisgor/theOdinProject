@@ -151,7 +151,29 @@ button {
 
 #testimonial {
     background: #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 440px;
+    align-items: center;
+}
+
+.testimonial-content {
+    color: #1F2937;
+    font-size: 36px;
+    font-weight: 200;
+    font-style: italic;
+    width: 776px;
+}
+
+.testimonial-user {
+    color: #1F2937;
+    display: flex;
+    font-size: 24px;
+    font-weight: 700;
+    justify-content: end;
+    margin-top: 10px;
+    width: 640px;
 }
 
 
