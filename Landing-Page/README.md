@@ -6,6 +6,10 @@ Using Languages
 - HTML
 - CSS
 
+Project Link: https://ersinisgor.github.io/theOdinProject/Landing-Page/
+
+![Landing-page](img/Bite%20Chickens.JPG 'Landing-Page')
+
 ## Resources
 
 Thank you for all my sources.
