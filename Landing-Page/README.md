@@ -3,12 +3,13 @@
 This website called `Bite Chickens` is a landing page project using css flexbox.
 
 Using Languages
+
 - HTML
 - CSS
 
-Project Link: https://jocular-pudding-3b9e26.netlify.app/
+Project Link: https://landing-page-er.netlify.app/
 
-![Landing-page](img/Bite%20Chickens.JPG 'Landing-Page')
+![Landing-page](img/Bite%20Chickens.JPG "Landing-Page")
 
 ## Resources
 
