@@ -8,14 +8,18 @@ const resetBtn = document.querySelector("#reset");
 //refresh page for new game
 resetBtn.addEventListener("click", () => location.reload());
 
+let playerScore = 0;
+let computerScore = 0;
+
 buttons.forEach((button) => {
   button.addEventListener("click", getPlayerChoice);
 });
 
 function getPlayerChoice(e) {
-  let computerSelection = "paper";
   let playerSelection = e.target.id;
-  console.log(playerSelection);
+  let computerSelection = getComputerChoice();
+  playRound(playerSelection, computerSelection);
+
   function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock") {
       if (computerSelection === "rock") {
@@ -50,17 +54,8 @@ function getPlayerChoice(e) {
     } else if (result === "p") {
       alert(`You win!, couse Computer selected: ${computerSelection}`);
     }
-    return result;
   }
-
-  playRound(playerSelection, computerSelection);
 }
-
-//Old script
-/* let playerScore = 0;
-let computerScore = 0;
-
-const computerSelection = getComputerChoice();
 
 function getComputerChoice() {
   const items = ["rock", "paper", "scissors"];
@@ -69,7 +64,16 @@ function getComputerChoice() {
   return choice;
 }
 
-console.log(computerSelection);
+//Old script
+/* let playerScore = 0;
+let computerScore = 0;
+
+function getComputerChoice() {
+  const items = ["rock", "paper", "scissors"];
+  const i = Math.floor(Math.random() * 3);
+  const choice = items[i];
+  return choice;
+}
 
 let playerSelection = prompt("Write rock, paper or scissors").toLowerCase();
 
