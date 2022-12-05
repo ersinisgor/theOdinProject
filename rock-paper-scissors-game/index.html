@@ -5,32 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock-Paper-Scissors Game</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e9020a7b47.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="flex">
-      <h1>Ersin-Rock-Paper-Scissors</h1>
-      <h2>Choose Your weopon</h2>
+      <h1>Rock-Paper-Scissors</h1>
+      <h2>Choose Your Weopon</h2>
       <h3>You have 5 lives!</h3>
 
       <div class="optionBtn">
-        <div id="rock" class="button">Rock</div>
-        <div id="paper" class="button">Paper</div>
-        <div id="scissors" class="button">Scissors</div>
-      </div>
-
-      <div class="labels">
-        <span id="playerLabel">Player Score:</span>
-        <span id="compLabel">Computer Score:</span>
+        <div id="rock" class="button" value="rock">
+          <i class="fa-regular fa-hand-back-fist"></i>
+        </div>
+        <div id="paper" class="button" value="paper">
+          <i class="fa-regular fa-hand"></i>
+        </div>
+        <div id="scissors" class="button" value="scissors">
+          <i class="fa-regular fa-hand-scissors"></i>
+        </div>
       </div>
 
       <div class="scores">
+        <span id="playerLabel">Player Score</span>
         <div id="playerScore"></div>
         <div id="computerScore"></div>
+        <span id="compLabel">Computer Score</span>
       </div>
 
-      <div><span id="resultsLabel">Results</label></div>
-    
+      <div><span id="resultsLabel">Results</span></div>
 
       <div id="roundResults"></div>
 
@@ -38,6 +50,20 @@
         <button id="reset">Play Again!</button>
       </div>
     </div>
+
+    <footer class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        ersinisgor
+      </p>
+      <a href="https://github.com/ersinisgor" target="_blank">
+        <i class="fab fa-github"></i
+      ></a>
+    </footer>
+
     <script src="app.js"></script>
   </body>
 </html>
