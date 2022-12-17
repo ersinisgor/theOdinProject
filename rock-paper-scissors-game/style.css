@@ -1,65 +1,75 @@
-body {
-  background: #f0f1f3;
-  font-family: "Zen Dots", cursive;
+* {
   margin: 0;
   padding: 0;
 }
 
-/* HEADER */
+body {
+  background: #f0f1f3;
+  font-family: "Zen Dots", cursive;
+  height: 95vh;
+  margin: auto;
+  padding-top: 1rem;
+  width: 95%;
+  text-align: center;
+}
 
+/* HEADER */
 h1 {
   color: rgb(70, 13, 9);
-  font-size: 50px;
-  margin: 15px;
+  font-size: 3.1rem;
+  margin: 1rem 0px;
 }
 
 h2 {
-  font-size: 30px;
   color: #86273c;
-  margin: 15px;
+  font-size: 1.9rem;
+  margin: 1rem 0px;
 }
 
 h3 {
-  font-size: 16px;
   color: #af3636;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  font-size: 1rem;
+  margin: 1rem 0px;
 }
 
-/* make it all fit to page*/
-.flex {
+/* BUTTONS */
+.optionBtn {
+  justify-content: space-between;
   display: flex;
-  width: 100%;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  padding-top: 15px;
+  height: 94px;
+  margin: auto;
+  margin-bottom: 1.9rem;
+  width: 500px;
 }
 
-/* Outputs: playerScore, computerScore, final round results  */
+.optionBtn div {
+  border: 4px solid #5f0b3d;
+  color: rgb(23, 23, 27);
+  cursor: pointer;
+  font-size: 4rem;
+  font-weight: bold;
+  height: 76px;
+  margin-bottom: 1.9rem;
+  padding-top: 0.6rem;
+  text-align: center;
+  width: 76px;
+}
 
-#roundResults {
+.optionBtn div:hover {
+  background: #ffd43b;
+  border: 5px solid #5f0b3d;
+  transform: scale(1.2);
+}
+
+/* OUTPUTS: COMPUTER SCORE-PLAYER SCORE */
+.scores {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 250px;
-  height: 90px;
-  border: 5px solid rgb(27, 27, 31);
-  text-align: center;
-  font-weight: bolder;
-  font-size: 14px;
-}
-
-.scores {
-  display: flex;
-  flex-direction: row;
-  width: 398px;
-  align-items: center;
+  /* flex-direction: row; */
+  margin: auto;
   margin-bottom: 20px;
-}
-
-#playerScore {
-  margin-right: 30px;
+  width: 396px;
 }
 
 .scores div {
@@ -74,35 +84,37 @@ h3 {
   text-align: center;
 }
 
-/* BUTTONS */
-
-.optionBtn {
-  display: flex;
-  width: 500px;
-  justify-content: space-between;
-  height: 94px;
-  margin-bottom: 30px;
+#playerScore {
+  margin-right: 30px;
 }
 
-.optionBtn div {
-  border: 4px solid #5f0b3d;
-  width: 76px;
-  height: 76px;
-  font-size: 65px;
+#playerLabel {
+  font-size: 12px;
   font-weight: bold;
-  color: rgb(23, 23, 27);
-  margin-bottom: 30px;
-  cursor: pointer;
-  text-align: center;
-  padding-top: 9px;
+  color: #5f0b3d;
+  display: inline-block;
+  text-align: end;
+  /* padding-left: 21px; */
+  /* margin-left: 23px; */
+  margin-right: 3px;
+  width: 124px;
 }
 
-.optionBtn div:hover {
-  background: #ffd43b;
-  transform: scale(1.2);
+#compLabel {
+  font-size: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: #5f0b3d;
+  display: inline-block;
+  margin-left: 3px;
+  width: 124px;
+  text-align: start;
 }
 
 /* RESULTS */
+.resultsLabel {
+  margin-bottom: 2px;
+}
 
 #resultsLabel {
   font-size: 14px;
@@ -111,26 +123,21 @@ h3 {
   color: #5f0b3d;
 }
 
-#playerLabel {
-  font-size: 12px;
-  font-weight: bold;
-  color: #5f0b3d;
-  display: inline;
-  margin-left: 23px;
-  margin-right: 3px;
-}
-
-#compLabel {
-  font-size: 12px;
+#roundResults {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 370px;
+  height: 120px;
+  border: 5px solid rgb(27, 27, 31);
   text-align: center;
-  font-weight: bold;
-  color: #5f0b3d;
-  display: inline;
-  margin-left: 3px;
+  font-weight: bolder;
+  font-size: 14px;
+  margin: auto;
+  margin-bottom: 2px;
 }
 
 /* RESET */
-
 #reset {
   width: 160px;
   height: 40px;
@@ -143,16 +150,15 @@ h3 {
 }
 
 /* FOOTER */
-
 .footer {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 5px;
+  gap: 0.31rem;
   width: 100%;
   color: #646464;
-  font-size: 10px;
-  margin-top: 15px;
+  font-size: 0.62rem;
+  margin-top: 2.7rem;
 }
 
 .footer p {
@@ -167,4 +173,165 @@ h3 {
 
 .fa-github:hover {
   transform: rotate(360deg) scale(1.2);
+}
+
+@media (max-width: 1068px) {
+  h1 {
+    font-size: 3.3rem;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  .optionBtn {
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    margin: 120px 0px;
+  }
+
+  .optionBtn div {
+    border: 5px solid #5f0b3d;
+    font-size: 6rem;
+    height: 100px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    width: 100px;
+  }
+
+  .optionBtn div:hover {
+    border: 6px solid #5f0b3d;
+  }
+
+  .scores {
+    width: 100%;
+    margin-bottom: 100px;
+    justify-content: center;
+  }
+
+  .scores div {
+    width: 80px;
+    height: 40px;
+    border: 4px solid rgb(27, 27, 31);
+    font-size: 20px;
+  }
+
+  #playerScore {
+    margin-right: 100px;
+  }
+
+  #playerLabel {
+    font-size: 19px;
+    width: 178px;
+    text-align: end;
+    margin-right: 10px;
+  }
+
+  #compLabel {
+    width: 208px;
+    font-size: 19px;
+    text-align: start;
+    margin-left: 10px;
+  }
+
+  #resultsLabel {
+    font-size: 22px;
+  }
+
+  #roundResults {
+    width: 530px;
+    height: 180px;
+    border: 6px solid rgb(27, 27, 31);
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+
+  .footer {
+    gap: 0.31rem;
+    font-size: 0.75rem;
+    margin-top: 2.7rem;
+  }
+
+  .fa-github {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 27px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  .optionBtn {
+    justify-content: space-around;
+    width: 100%;
+    height: 94px;
+    margin: 60px 0px;
+  }
+
+  .optionBtn div {
+    border: 3px solid #5f0b3d;
+    font-size: 4.4rem;
+    height: 80px;
+    margin-bottom: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 80px;
+  }
+
+  .scores {
+    width: 410px;
+    margin-bottom: 30px;
+  }
+
+  .scores div {
+    width: 50px;
+    height: 30px;
+    border: 3px solid rgb(27, 27, 31);
+    font-size: 14px;
+  }
+
+  #playerLabel {
+    font-size: 13px;
+    width: 105px;
+  }
+
+  #compLabel {
+    width: 130px;
+    font-size: 13px;
+  }
+
+  #playerScore {
+    margin-right: 28px;
+  }
+
+  #resultsLabel {
+    font-size: 16px;
+  }
+
+  #roundResults {
+    width: 330px;
+    height: 100px;
+    border: 3px solid rgb(27, 27, 31);
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 }

@@ -18,37 +18,35 @@
     ></script>
   </head>
   <body>
-    <div class="flex">
-      <h1>Rock-Paper-Scissors</h1>
-      <h2>Choose Your Weopon</h2>
-      <h3>You have 5 lives!</h3>
+    <h1>Rock-Paper-Scissors</h1>
+    <h2>Choose Your Weopon</h2>
+    <h3>You have 5 lives!</h3>
 
-      <div class="optionBtn">
-        <div id="rock" class="button" value="rock">
-          <i class="fa-regular fa-hand-back-fist"></i>
-        </div>
-        <div id="paper" class="button" value="paper">
-          <i class="fa-regular fa-hand"></i>
-        </div>
-        <div id="scissors" class="button" value="scissors">
-          <i class="fa-regular fa-hand-scissors"></i>
-        </div>
+    <div class="optionBtn">
+      <div id="rock" class="button" value="rock">
+        <i class="fa-regular fa-hand-back-fist"></i>
       </div>
-
-      <div class="scores">
-        <span id="playerLabel">Player Score</span>
-        <div id="playerScore"></div>
-        <div id="computerScore"></div>
-        <span id="compLabel">Computer Score</span>
+      <div id="paper" class="button" value="paper">
+        <i class="fa-regular fa-hand"></i>
       </div>
-
-      <div><span id="resultsLabel">Results</span></div>
-
-      <div id="roundResults"></div>
-
-      <div>
-        <button id="reset">Play Again!</button>
+      <div id="scissors" class="button" value="scissors">
+        <i class="fa-regular fa-hand-scissors"></i>
       </div>
+    </div>
+
+    <div class="scores">
+      <span id="playerLabel">Player Score</span>
+      <div id="playerScore"></div>
+      <div id="computerScore"></div>
+      <span id="compLabel">Computer Score</span>
+    </div>
+
+    <div class="resultsLabel"><span id="resultsLabel">Results</span></div>
+
+    <div id="roundResults"></div>
+
+    <div>
+      <button id="reset">Play Again!</button>
     </div>
 
     <footer class="footer">
@@ -63,6 +61,10 @@
         <i class="fab fa-github"></i
       ></a>
     </footer>
+
+    <audio src="sounds/select.wav" id="select"></audio>
+    <audio src="sounds/win.wav" id="win"></audio>
+    <audio src="sounds/lost.wav" id="lost"></audio>
 
     <script src="app.js"></script>
   </body>
