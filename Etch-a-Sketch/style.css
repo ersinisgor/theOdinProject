@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  background: #c1d7ae;
+}
+
+header {
+  text-align: center;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  height: 540px;
+  justify-content: space-around;
+}
+
+.content {
+  display: flex;
+  padding: 0 15%;
+  gap: 15%;
+}
+
+#container {
+  width: 540px;
+  height: 540px;
+  border: 1px solid black;
+  background: #fff;
+}
