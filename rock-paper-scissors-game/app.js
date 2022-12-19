@@ -51,7 +51,6 @@ const playGame = function () {
   comScore.innerHTML = computerScore;
   plyScore.innerHTML = playerScore;
   results.innerHTML = writeResult;
-  console.log(playerSelection, computerSelection, result);
 };
 
 // game result according to selected values
