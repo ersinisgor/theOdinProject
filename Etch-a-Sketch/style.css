@@ -4,10 +4,14 @@
 }
 
 body {
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   color: #0d1b2a;
   font-family: "Open Sans", sans-serif;
   background: #c1d7ae;
+}
+
+i {
+  font-size: 17px;
 }
 
 button {
@@ -91,16 +95,19 @@ input[type="color"] {
 
 /*----BOXES----*/
 #container {
+  display: flex;
+  flex-wrap: wrap;
   -webkit-box-shadow: 0px 0px 10px 4px #968e85;
   box-shadow: 0px 0px 10px 4px #968e85;
-  width: 542px;
-  height: 542px;
+  width: 540px;
+  height: 540px;
   border: 1px solid #968e85;
   background: #ecdcb0;
 }
 
 .boxes {
-  border: 1px solid #0d1b2a;
+  border-bottom: 1px solid #968e85;
+  border-right: 1px solid #968e85;
 }
 
 /*----FOOTER----*/
