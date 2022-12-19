@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch a Sketch</title>
     <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/e9020a7b47.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
@@ -13,19 +18,45 @@
     </header>
     <div class="content">
       <div class="leftContent">
-        <input type="color" id="colorInput" />
+        <div class="inputColor">
+          <input type="color" value="#0d1b2a" />
+        </div>
         <button id="colorMode">Color Mode</button>
         <button id="rainbowMode">Rainbow Mode</button>
         <button id="erase">Erase</button>
         <button id="clear">Clear</button>
         <div class="range">
-          <label for="">Change Size</label>
-          <input type="range" />
+          <div class="labels">
+            <label for="">Change Size: </label>
+            <label for="range" class="size">16</label>
+            <label for="range"> x </label>
+            <label for="range" class="size">16</label>
+          </div>
+          <input
+            type="range"
+            id="range"
+            value="16"
+            min="1"
+            max="64"
+            step="1"
+            onmousemove="changeSize(this.value)"
+          />
         </div>
       </div>
       <div id="container"></div>
     </div>
-    <footer></footer>
+    <footer>
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        ersinisgor
+      </p>
+      <a href="https://github.com/ersinisgor" target="_blank">
+        <i class="fab fa-github"></i
+      ></a>
+    </footer>
     <script src="app.js"></script>
   </body>
 </html>
