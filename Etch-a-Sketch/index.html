@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch a Sketch</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="image/sketch.png" type="image/png" />
     <script
       src="https://kit.fontawesome.com/e9020a7b47.js"
       crossorigin="anonymous"
@@ -18,7 +19,7 @@
     <div class="content">
       <div class="leftContent">
         <div class="inputColor">
-          <input type="color" value="#0d1b2a" />
+          <input type="color" id="color" value="#0d1b2a" />
         </div>
         <button id="colorMode">Color Mode</button>
         <button id="rainbowMode">Rainbow Mode</button>
@@ -28,14 +29,14 @@
         <div class="range">
           <div class="labels">
             <label for="">Change Size: </label>
-            <label for="range" class="size">5</label>
+            <label for="range" class="size">16</label>
             <label for="range"> x </label>
-            <label for="range" class="size">5</label>
+            <label for="range" class="size">16</label>
           </div>
           <input
             type="range"
             id="range"
-            value="5"
+            value="16"
             min="1"
             max="64"
             step="1"
@@ -52,7 +53,7 @@
         <script>
           document.write(new Date().getFullYear());
         </script>
-        Created by <b><i>ersinisgor</i></b>
+        Created by <b><i>ersinisgor </i></b>
       </p>
       <a href="https://github.com/ersinisgor" target="_blank">
         <i class="fab fa-github"></i
