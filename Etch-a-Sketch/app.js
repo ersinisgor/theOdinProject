@@ -6,19 +6,38 @@ const selected = document.querySelector(".selected");
 const rainbowMode = document.querySelector("#rainbowMode");
 const colorMode = document.querySelector("#colorMode");
 
-// select for paint color
-const selectColor = function () {
+// Color Mode
+const selectColorMode = function () {
   rainbowMode.classList.remove("selected");
   colorMode.classList.add("selected");
 };
-colorMode.addEventListener("click", selectColor);
+colorMode.addEventListener("click", selectColorMode);
+
+const changeButtonColor = function () {
+  const colorButton = document.querySelector("#colorMode");
+  const headerColor = document.querySelector("header");
+
+  colorButton.style.backgroundColor = `${color.value}`;
+  range.style.accentColor = `${color.value}`;
+  headerColor.style.color = `${color.value}`;
+};
+if (colorMode.className === "selected") {
+  color.addEventListener("input", changeButtonColor);
+}
+
+// Rainbow Mode
+const rainbow = function () {
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  const hexColor = `#${randomColor}`;
+  return hexColor;
+};
 
 //select for paint rainbow
-const selectRainbow = function () {
+const selectRainbowMode = function () {
   colorMode.classList.remove("selected");
   rainbowMode.classList.add("selected");
 };
-rainbowMode.addEventListener("click", selectRainbow);
+rainbowMode.addEventListener("click", selectRainbowMode);
 
 // clear all area
 const clearBoxes = function () {
@@ -28,6 +47,18 @@ const clearBoxes = function () {
   }
 };
 clear.addEventListener("click", clearBoxes);
+
+// remove borders
+/* const removeBorders = function () {
+  const boxes = document.querySelectorAll(".boxes");
+  for (let i = 0; i < boxes.length; i++) {
+    boxes[i].removeAttribute("border-bottom");
+    boxes[i].removeAttribute("border-right");
+    boxes[i].style.width = `calc((540px / ${range.value})`;
+    boxes[i].style.height = `calc((540px / ${range.value})`;
+  }
+};
+tryBtn.addEventListener("click", removeBorders); */
 
 // it writes the size to the screen when the range changed with mouse
 const changeSize = function () {
@@ -49,7 +80,11 @@ range.addEventListener("input", deleteBoxes);
 
 //painting boxes
 const paintColor = function () {
-  this.style.backgroundColor = `${color.value}`;
+  if (colorMode.className === "selected") {
+    this.style.backgroundColor = `${color.value}`;
+  } else if (rainbowMode.className === "selected") {
+    this.style.backgroundColor = `${rainbow()}`;
+  }
 };
 
 // creating boxes
@@ -69,6 +104,23 @@ const createBoxes = function () {
 };
 createBoxes();
 range.addEventListener("change", createBoxes);
+
+/* const createBoxes = function () {
+  for (let i = 1; i <= `${range.value * range.value}`; i++) {
+    const box = document.createElement("div");
+    box.style.width = `calc((540px / ${range.value})`;
+    box.style.height = `calc((540px / ${range.value})`;
+    container.appendChild(box);
+    box.className = "boxes";
+  }
+
+  const boxes = document.querySelectorAll(".boxes");
+  boxes.forEach((box) => {
+    box.addEventListener("mouseenter", paintColor);
+  });
+};
+createBoxes();
+range.addEventListener("change", createBoxes); */
 
 //------------------OLD SCRIPT-------------------//
 /* const tryBtn = document.querySelector("#try"); 
