@@ -1,6 +1,33 @@
 /* const tryBtn = document.querySelector("#try"); */
 const range = document.querySelector("#range");
 const color = document.querySelector("#color");
+const clear = document.querySelector("#clear");
+const selected = document.querySelector(".selected");
+const rainbowMode = document.querySelector("#rainbowMode");
+const colorMode = document.querySelector("#colorMode");
+
+// select for paint color
+const selectColor = function () {
+  rainbowMode.classList.remove("selected");
+  colorMode.classList.add("selected");
+};
+colorMode.addEventListener("click", selectColor);
+
+//select for paint rainbow
+const selectRainbow = function () {
+  colorMode.classList.remove("selected");
+  rainbowMode.classList.add("selected");
+};
+rainbowMode.addEventListener("click", selectRainbow);
+
+// clear all area
+const clearBoxes = function () {
+  const boxes = document.querySelectorAll(".boxes");
+  for (let i = 0; i < boxes.length; i++) {
+    boxes[i].style.backgroundColor = "#ecdcb0";
+  }
+};
+clear.addEventListener("click", clearBoxes);
 
 // it writes the size to the screen when the range changed with mouse
 const changeSize = function () {
