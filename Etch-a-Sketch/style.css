@@ -110,8 +110,8 @@ input[type="color"] {
 }
 
 .boxes {
-  border-bottom: 1px solid #968e85;
-  border-right: 1px solid #968e85;
+  /* border-bottom: 1px solid #968e85;
+  border-right: 1px solid #968e85; */
   background: #ecdcb0;
 }
 

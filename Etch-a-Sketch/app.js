@@ -88,7 +88,7 @@ const paintColor = function () {
 };
 
 // creating boxes
-const createBoxes = function () {
+/* const createBoxes = function () {
   for (let i = 1; i <= `${range.value * range.value}`; i++) {
     const box = document.createElement("div");
     box.style.width = `calc((540px / ${range.value}) - 1px`;
@@ -103,9 +103,9 @@ const createBoxes = function () {
   });
 };
 createBoxes();
-range.addEventListener("change", createBoxes);
+range.addEventListener("change", createBoxes); */
 
-/* const createBoxes = function () {
+const createBoxes = function () {
   for (let i = 1; i <= `${range.value * range.value}`; i++) {
     const box = document.createElement("div");
     box.style.width = `calc((540px / ${range.value})`;
@@ -115,14 +115,20 @@ range.addEventListener("change", createBoxes);
   }
 
   const boxes = document.querySelectorAll(".boxes");
+
   boxes.forEach((box) => {
+    /* box.addEventListener("mouseover", paintColor);
+    box.addEventListener("mousedown", paintColor); */
     box.addEventListener("mouseenter", paintColor);
   });
 };
-createBoxes();
-range.addEventListener("change", createBoxes); */
+range.addEventListener("change", createBoxes);
 
-//------------------OLD SCRIPT-------------------//
+window.onload = () => {
+  createBoxes();
+};
+
+//--------------------------------OLD SCRIPT------------------------------//
 /* const tryBtn = document.querySelector("#try"); 
 const container = document.querySelector("#container");
 const clear = document.querySelector("#clear");
