@@ -88,11 +88,6 @@ input[type="color"] {
   background: #ecdcb0;
 }
 
-#range:hover {
-  accent-color: #0d1b2a;
-  background: #ecdcb0;
-}
-
 /*----BOXES----*/
 #container {
   display: flex;
