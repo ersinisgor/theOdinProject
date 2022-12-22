@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +8,8 @@
 body {
   box-sizing: border-box;
   color: #0d1b2a;
-  font-family: "Open Sans", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: "Permanent Marker", cursive;
   background: #c1d7ae;
 }
 
@@ -15,6 +18,7 @@ i {
 }
 
 button {
+  font-family: "Permanent Marker", cursive;
   color: #0d1b2a;
   font-size: 18px;
   border-radius: 10px;
@@ -28,43 +32,42 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* button:nth-of-type(1) {
-  color: #ecdcb0;
-  background: #0d1b2a;
-} */
+.flex {
+  max-width: 1400px;
+  margin: auto;
+}
 
 header {
-  position: absolute;
-  padding: 0 4% 0 8%;
   text-align: center;
+  font-weight: 400;
   font-size: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-top: 5px;
 }
 
 .content {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  padding: 0 14%;
-  gap: 15%;
-  margin-top: 25px;
+  align-items: center;
+  padding: 0 12%;
 }
 
 /*----LEFT SIDE----*/
-.leftContent {
+.left-content {
   width: 240px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
-  height: 440px;
+  height: 540px;
   justify-content: space-around;
 }
 
 .inputColor {
   margin: 0 auto;
-  width: 80px;
-  height: 80px;
-  border-radius: 50px;
+  width: 50%;
+  height: 50px;
+  border-radius: 20px;
+  /* border-radius: 50px; */
   overflow: hidden;
 }
 
@@ -117,6 +120,7 @@ input[type="color"] {
 
 /*----FOOTER----*/
 footer {
+  font-family: "Open Sans", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,13 +129,13 @@ footer {
   color: #646464;
   font-size: 1rem;
   margin-top: 1.5rem;
+  margin-bottom: auto;
   height: 30px;
 }
 
 .fa-github {
   color: #646464;
   font-size: 1.35rem;
-  /* transition: transform 0.3s ease-in-out; */
 }
 
 .fa-github:hover {
@@ -144,5 +148,47 @@ footer {
   }
   to {
     transform: translateY(-0.3rem) scale(1.2);
+  }
+}
+
+@media (min-width: 1400px) {
+  .content {
+    margin-top: 5%;
+  }
+
+  footer {
+    margin-top: 5%;
+    margin-bottom: auto;
+  }
+}
+
+@media (max-width: 1100px) {
+  header {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 12px;
+    height: 20px;
+  }
+
+  .content {
+    flex-direction: column-reverse;
+    padding: 0 2%;
+  }
+
+  .left-content {
+    width: 180px;
+    height: 250px;
+    margin-top: 3%;
+  }
+
+  .inputColor {
+    width: 40px;
+    height: 40px;
+  }
+
+  footer {
+    margin-bottom: auto;
   }
 }

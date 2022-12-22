@@ -13,43 +13,51 @@
     ></script>
   </head>
   <body>
-    <header>
-      <h1>Etch a Sketch</h1>
-    </header>
-    <div class="content">
-      <div class="leftContent">
-        <div class="inputColor">
-          <input type="color" id="color" value="#0d1b2a" />
-        </div>
-        <button id="colorMode" class="selected">Color Mode</button>
-        <button id="rainbowMode">Rainbow Mode</button>
-        <button id="erase">Erase</button>
-        <button id="clear">Clear</button>
-        <button id="try">Try Button</button>
-        <div class="range">
-          <div class="labels">
-            <label for="">Change Size: </label>
-            <label for="range" class="size">16</label>
-            <label for="range"> x </label>
-            <label for="range" class="size">16</label>
+    <div class="flex">
+      <header>
+        <h1>Etch a Sketch</h1>
+      </header>
+      <div class="content">
+        <div class="left-content">
+          <div class="inputColor">
+            <input type="color" id="color" value="#0d1b2a" />
           </div>
-          <input type="range" id="range" value="16" min="1" max="64" step="1" />
+          <button id="colorMode" class="selected">Color Mode</button>
+          <button id="rainbowMode">Rainbow Mode</button>
+          <button id="erase">Erase</button>
+          <button id="clear">Clear</button>
+          <div class="range">
+            <div class="labels">
+              <label for="">Change Size: </label>
+              <label for="range" class="size">16</label>
+              <label for="range"> x </label>
+              <label for="range" class="size">16</label>
+            </div>
+            <input
+              type="range"
+              id="range"
+              value="16"
+              min="1"
+              max="64"
+              step="1"
+            />
+          </div>
         </div>
+        <div id="container"></div>
       </div>
-      <div id="container"></div>
+      <footer>
+        <p>
+          Copyright ©
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Created by <b><i>ersinisgor </i></b>
+        </p>
+        <a href="https://github.com/ersinisgor" target="_blank">
+          <i class="fab fa-github"></i
+        ></a>
+      </footer>
     </div>
-    <footer>
-      <p>
-        Copyright ©
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        Created by <b><i>ersinisgor </i></b>
-      </p>
-      <a href="https://github.com/ersinisgor" target="_blank">
-        <i class="fab fa-github"></i
-      ></a>
-    </footer>
     <script src="app.js"></script>
   </body>
 </html>

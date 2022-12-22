@@ -1,14 +1,15 @@
-/* const tryBtn = document.querySelector("#try"); */
 const range = document.querySelector("#range");
 const color = document.querySelector("#color");
 const clear = document.querySelector("#clear");
 const selected = document.querySelector(".selected");
 const rainbowMode = document.querySelector("#rainbowMode");
 const colorMode = document.querySelector("#colorMode");
+const eraseMode = document.querySelector("#erase");
 
 // Color Mode
 const selectColorMode = function () {
   rainbowMode.classList.remove("selected");
+  eraseMode.classList.remove("selected");
   colorMode.classList.add("selected");
 };
 colorMode.addEventListener("click", selectColorMode);
@@ -35,9 +36,18 @@ const rainbow = function () {
 //select for paint rainbow
 const selectRainbowMode = function () {
   colorMode.classList.remove("selected");
+  eraseMode.classList.remove("selected");
   rainbowMode.classList.add("selected");
 };
 rainbowMode.addEventListener("click", selectRainbowMode);
+
+// erase
+const selectEraseMode = function () {
+  colorMode.classList.remove("selected");
+  rainbowMode.classList.remove("selected");
+  eraseMode.classList.add("selected");
+};
+eraseMode.addEventListener("click", selectEraseMode);
 
 // clear all area
 const clearBoxes = function () {
@@ -84,6 +94,8 @@ const paintColor = function () {
     this.style.backgroundColor = `${color.value}`;
   } else if (rainbowMode.className === "selected") {
     this.style.backgroundColor = `${rainbow()}`;
+  } else if (eraseMode.className === "selected") {
+    this.style.backgroundColor = "#ecdcb0";
   }
 };
 
@@ -117,8 +129,6 @@ const createBoxes = function () {
   const boxes = document.querySelectorAll(".boxes");
 
   boxes.forEach((box) => {
-    /* box.addEventListener("mouseover", paintColor);
-    box.addEventListener("mousedown", paintColor); */
     box.addEventListener("mouseenter", paintColor);
   });
 };
