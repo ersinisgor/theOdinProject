@@ -1,9 +1,131 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #c2fbef;
+}
+
+.fixed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #fb8500;
+  background: #126782;
+  width: 400px;
+  margin: auto;
+  border-radius: 16px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 32px;
+  color: #fff;
+  letter-spacing: 1px;
 }
 
 .btn {
-  width: 70px;
-  height: 70px;
+  width: 84px;
+  height: 68px;
+  border: 2px solid #ffb703;
+  border-radius: 16px;
+  background: #023047;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  font-size: 20px;
+}
+
+.btn:hover {
+  background: #219ebc;
+}
+
+.half {
+  width: 128px;
+}
+
+.screen {
+  display: flex;
+  border: 2px solid #ffb703;
+  border-radius: 16px;
+  width: 348px;
+  height: 90px;
+  margin: 10px 0px;
+  padding: 5px 16px;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.top-result {
+  color: #fff;
+}
+
+.result {
+  text-align: right;
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.top {
+  display: flex;
+}
+
+.middle-1 {
+  display: flex;
+}
+
+.middle-2 {
+  display: flex;
+}
+
+.middle-3 {
+  display: flex;
+}
+
+.bottom {
+  display: flex;
+}
+
+/*----FOOTER----*/
+footer {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  color: #646464;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: auto;
+  height: 30px;
+  bottom: 0;
+  position: absolute;
+}
+
+.fa-github {
+  color: #646464;
+  font-size: 1.35rem;
+}
+
+.fa-github:hover {
+  animation: github-animation 0.5s ease infinite alternate;
+}
+
+@keyframes github-animation {
+  from {
+    transform: translateY(0rem) scale(1.2);
+  }
+  to {
+    transform: translateY(-0.3rem) scale(1.2);
+  }
 }
