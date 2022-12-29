@@ -6,6 +6,7 @@
 
 body {
   background: #c2fbef;
+  font-family: "Orbitron", sans-serif;
 }
 
 .fixed {
@@ -13,10 +14,10 @@ body {
   flex-direction: column;
   align-items: center;
   border: 2px solid #fb8500;
-  background: #126782;
-  width: 400px;
+  background: #023047;
+  width: 380px;
   margin: auto;
-  border-radius: 16px;
+  border-radius: 26px;
   padding-bottom: 20px;
   padding-top: 20px;
   margin-top: 20px;
@@ -24,38 +25,41 @@ body {
 
 .title {
   font-size: 32px;
+  font-weight: 500;
   color: #fff;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
 }
 
 .btn {
-  width: 84px;
-  height: 68px;
+  width: 74px;
+  height: 58px;
   border: 2px solid #ffb703;
-  border-radius: 16px;
-  background: #023047;
+  border-radius: 10px;
+  background: #126782;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2px;
-  font-size: 20px;
+  margin: 4px;
+  font-size: 18px;
 }
 
 .btn:hover {
   background: #219ebc;
+  cursor: default;
 }
 
-.half {
-  width: 128px;
+.db {
+  width: 156px;
 }
 
 .screen {
+  background: #219ebc;
   display: flex;
   border: 2px solid #ffb703;
-  border-radius: 16px;
-  width: 348px;
-  height: 90px;
+  border-radius: 10px;
+  width: 320px;
+  height: 120px;
   margin: 10px 0px;
   padding: 5px 16px;
   align-items: flex-end;
@@ -71,7 +75,7 @@ body {
 .result {
   text-align: right;
   font-size: 32px;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #fff;
 }
 
