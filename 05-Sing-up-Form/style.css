@@ -1,0 +1,41 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+}
+
+/*----LEFT SIDE----*/
+.bg {
+  flex: 2;
+  background: url(img/karl-paul-baldacchino-p1dtEefClWY-unsplash.jpg) no-repeat
+    center center / cover;
+  position: relative;
+}
+
+.transparent-row {
+  background: rgba(89, 109, 72, 0.5);
+  height: 5rem;
+  width: 100%;
+  top: 7rem;
+  position: absolute;
+}
+
+.brand-svg {
+  display: flex;
+}
+
+.brand-svg img {
+  height: 5rem;
+}
+
+/*----FORM SIDE---*/
+main {
+  flex: 3;
+}
