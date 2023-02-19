@@ -24,13 +24,13 @@ body {
   /* background: var(--font); */
   font-family: 'Work Sans', sans-serif;
   display: grid;
-  grid-template-columns: 1.2fr 4fr;
+  grid-template-columns: 1.1fr 4fr;
   grid-template-rows: 1fr 4fr;
 }
 
 aside {
   top: 0;
-  padding: 10%;
+  padding: 1.5rem;
   background: var(--side);
   grid-area: 1 / 1 / 3 / 2;
   height: 100vh;
@@ -38,9 +38,37 @@ aside {
 }
 
 header {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 1.5rem;
+  box-shadow: 0px 0px 10px 4px #968e85;
+  /* box-shadow: 0 0.2rem 0.2rem rgb(0 0 0 / 30%); */
   color: var(--primary);
-  /* background: var(--font); */
   background: var(--font);
+}
+
+input[type='search'] {
+  color: var(--primary);
+  font-size: 1rem;
+  width: 100%;
+  height: 2.2rem;
+  border: none;
+  border-radius: 2rem;
+  padding: 0 1rem;
+  outline: none;
+}
+
+input[type='search']:focus {
+  outline: none;
+}
+
+label {
+  display: none;
+}
+
+::-webkit-input-placeholder {
+  color: var(--primary);
 }
 
 main {
@@ -73,7 +101,7 @@ i {
 
 .side-menu {
   padding: 0.5rem 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.1rem;
   display: flex;
@@ -81,6 +109,73 @@ i {
 }
 
 .side-menu:hover {
+  font-weight: 600;
+  font-size: 1.3rem;
+  padding-left: 1rem;
+  background: var(--font);
   color: var(--primary);
+}
+
+/*----HEADER----*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+header form {
+  align-self: center;
+  background: #fff;
+  border-radius: 2rem;
+  display: flex;
+  box-shadow: 0 0.2rem 0.2rem rgb(0 0 0 / 30%);
+  height: 2.2rem;
+  padding: 0 1rem;
+  align-items: center;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+form:has(input:focus) {
+  box-shadow: 0px 0px 10px 4px #968e85;
+}
+
+header form i {
+  font-size: 1.1rem;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.navbar-buttons {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  grid-area: 1 / 2 / 2 / 3;
+  margin-left: 0.5rem;
+}
+
+.navbar-buttons img {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0.7rem;
+  cursor: pointer;
+}
+
+.navbar-buttons img:hover {
   transform: scale(1.1);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-left: 2rem;
+}
+
+.navbar-right img {
+  /* margin-left: 1rem;
+  margin: 0; */
+  margin-right: 0;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
 }
