@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #000428;
+  --secondary: #004e92;
+  --font: #efedae;
+  --side: #dd080c;
+}
+
+svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+body {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: var(--font);
+  /* background: var(--font); */
+  font-family: 'Work Sans', sans-serif;
+  display: grid;
+  grid-template-columns: 1.2fr 4fr;
+  grid-template-rows: 1fr 4fr;
+}
+
+aside {
+  top: 0;
+  padding: 10%;
+  background: var(--side);
+  grid-area: 1 / 1 / 3 / 2;
+  height: 100vh;
+  position: sticky;
+}
+
+header {
+  color: var(--primary);
+  /* background: var(--font); */
+  background: var(--font);
+}
+
+main {
+  /* background: var(--font); */
+}
+
+i {
+  width: 1.1rem;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+/*----SIDE----*/
+.dashboard {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard div {
+  font-weight: 600;
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+
+.menu {
+  cursor: pointer;
+  margin: 3rem 0;
+}
+
+.side-menu {
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.side-menu:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
