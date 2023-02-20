@@ -25,24 +25,26 @@ body {
   font-family: 'Work Sans', sans-serif;
   display: grid;
   grid-template-columns: 1.1fr 4fr;
-  grid-template-rows: 1fr 4fr;
+  /* grid-template-rows: 1fr 4fr; */
 }
 
 aside {
   top: 0;
   padding: 1.5rem;
   background: var(--side);
-  grid-area: 1 / 1 / 3 / 2;
+  /* grid-area: 1 / 1 / 3 / 2; */
+  grid-column: 1 / 2;
   height: 100vh;
   position: sticky;
 }
 
 header {
+  grid-column: 2 / 3;
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: 1fr 1fr;
   padding: 1.5rem;
-  box-shadow: 0px 0px 10px 4px #968e85;
+  /* box-shadow: 0px 0px 10px 4px #968e85; */
   /* box-shadow: 0 0.2rem 0.2rem rgb(0 0 0 / 30%); */
   color: var(--primary);
   background: var(--font);
@@ -68,17 +70,27 @@ label {
 }
 
 ::-webkit-input-placeholder {
-  color: var(--primary);
+  color: #968e85;
 }
 
 main {
-  /* background: var(--font); */
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem;
 }
 
 i {
   width: 1.1rem;
   font-size: 1rem;
   margin-right: 1rem;
+}
+
+span {
+  font-size: 1rem;
+  color: var(--primary);
 }
 
 /*----SIDE----*/
@@ -146,7 +158,7 @@ header form i {
 
 .navbar-buttons {
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: center;
   grid-area: 1 / 2 / 2 / 3;
   margin-left: 0.5rem;
@@ -175,7 +187,167 @@ header form i {
   /* margin-left: 1rem;
   margin: 0; */
   margin-right: 0;
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
 }
+
+.navbar-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+.categories-box {
+  cursor: pointer;
+  gap: 0.3rem;
+  padding: 0.5rem;
+  width: fit-content;
+  color: var(--font);
+  background: var(--primary);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.categories-box img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.categories-box span {
+  color: var(--font);
+}
+
+.categories span {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+span.arrow {
+  cursor: default;
+}
+
+.my-info {
+  cursor: pointer;
+  background: var(--side);
+  border-radius: 2rem;
+  padding: 0.5rem;
+  color: var(--font);
+}
+
+/*----MAIN----*/
+.card {
+  /* width: 300px; */
+  display: flex;
+  padding: 1rem 1rem 1rem 2rem;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--primary);
+  background: var(--font);
+  height: 200px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px 4px var(--primary);
+}
+
+.card-1 {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.card-2 {
+  grid-area: 1 / 2 / 3 / 3;
+}
+
+.card-3 {
+  grid-area: 3 / 1 / 5 / 2;
+}
+
+.card-4 {
+  grid-area: 3 / 2 / 5 / 3;
+}
+
+.card-5 {
+  grid-area: 5 / 1 / 7 / 2;
+}
+
+.card-6 {
+  grid-area: 5 / 2 / 7 / 3;
+}
+
+.header {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.footer span:first-child {
+  margin-right: 0.4rem;
+  color: #dd080c;
+  font-weight: 500;
+}
+
+.rate {
+  margin-left: 0.3rem;
+  color: #968e85;
+  font-size: 0.8rem;
+}
+
+.footer span:last-child {
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+/*----FOOTER----*/
+footer {
+  grid-column: 2 / 3;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  color: #efedae;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: auto;
+  height: 30px;
+  padding-bottom: 0;
+}
+
+.fa-github {
+  color: #efedae;
+  font-size: 1.25rem;
+}
+
+.fa-github:hover {
+  animation: github-animation 0.5s ease infinite alternate;
+}
+
+@keyframes github-animation {
+  from {
+    transform: translateY(0rem) scale(1.2);
+  }
+  to {
+    transform: translateY(-0.3rem) scale(1.2);
+  }
+}
+
+/* a i {
+  width: 1.1rem;
+  font-size: 1rem;
+  margin-right: 1rem;
+} */
