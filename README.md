@@ -8,3 +8,4 @@ This repository includes `The Odin Project`'s exercises and projects.
 - Rock Paper Scissors Game: https://rockpaperscissors-game-er.netlify.app/
 - Each A Sketch: https://etch-a-sketch-er.netlify.app/
 - Sing up Form: https://singup-form-er.netlify.app/
+- Admin Dashboard: https://app.netlify.com/sites/admin-dashboard-er/overview
