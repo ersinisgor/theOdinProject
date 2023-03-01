@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #ffd7ba;
+  --secondary: #fec89a;
+  /* --font: whitesmoke; */
+  --emphasis: #a52a2a;
+  --font: #fefae0;
+  --padding: 2rem;
+}
+
+body {
+  background: var(--primary);
+  font-family: 'Libre Baskerville', serif;
+  color: var(--emphasis);
+}
+
+/*----------ELEMENT SELECTORS----------*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  background: var(--secondary);
+  padding: 0 2rem;
+  box-shadow: 0px 5px 15px 0px var(--emphasis);
+  /* position: sticky;
+  top: 0; */
+}
+
+main {
+  display: flex;
+  padding: 3rem var(--padding);
+  justify-content: space-between;
+}
+
+aside {
+  position: sticky;
+  top: 9rem;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  justify-content: space-between;
+  /* padding: var(--padding); */
+  margin-right: var(--padding);
+}
+
+section {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: var(--padding);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--emphasis);
+  letter-spacing: 3px;
+}
+
+button {
+  height: 3rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--emphasis);
+  color: var(--font);
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+hr {
+  border-bottom: 1px solid var(--secondary);
+  height: 0;
+  width: 100%;
+}
+
+/*----------HEADER----------*/
+
+/*----------SIDE----------*/
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.content h3 {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+
+.content .book-info {
+  font-size: 0.8rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.content .book-info .info {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.card {
+  border-radius: 1rem;
+  height: 270px;
+  background: var(--font);
+  color: var(--emphasis);
+  /* width: 200px; */
+  box-shadow: 0px 0px 10px 4px rgba(165, 42, 42, 0.56);
+}
+
+img {
+  width: 600px;
+  height: 1000px;
+}
+
+@media (max-width: 1100px) {
+  main {
+    flex-direction: column;
+  }
+} ;
