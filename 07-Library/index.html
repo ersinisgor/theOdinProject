@@ -34,19 +34,33 @@
           </div>
           <hr />
         </div>
-        <button type="submit">+</button>
+        <img class="add-book" src="img/add-svgrepo-com.svg" alt="" />
       </aside>
       <section>
-        <!-- <div class="card"></div>
+        <div class="card">
+          <div class="book-label">Title</div>
+          <div class="book-title">Roman</div>
+          <div class="book-label">Author</div>
+          <div class="book-author">Hacı Bektaş</div>
+          <div class="book-label">Page</div>
+          <div class="book-page">256</div>
+          <div class="book-read read">Read</div>
+          <button>Remove</button>
+        </div>
+        <div class="card">
+          <div class="book-label">Title</div>
+          <div class="book-title">The Lord of The Rings</div>
+          <div class="book-label">Author</div>
+          <div class="book-author">JJ Rowling</div>
+          <div class="book-label">Page</div>
+          <div class="book-page">256</div>
+          <div class="book-read unread">Read</div>
+          <button>Remove</button>
+        </div>
         <div class="card"></div>
         <div class="card"></div>
         <div class="card"></div>
         <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div> -->
       </section>
       <div class="modal">
         <div class="input-form">
@@ -76,15 +90,15 @@
               placeholder="Page"
               required
             />
-            <div class="read">
+            <div class="check-read">
               <label for="read">Have you read it?</label>
               <input type="checkbox" name="" id="read" />
             </div>
+            <button type="submit">Add</button>
           </form>
+          <img src="img/close-svgrepo-com.svg" alt="" class="close" />
         </div>
       </div>
-
-      <!-- <div class="card"></div> -->
     </main>
     <script src="app.js"></script>
   </body>

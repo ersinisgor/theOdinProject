@@ -1,7 +1,8 @@
-const addBook = document.querySelector('button[type="submit"]');
+const addBook = document.querySelector('.add-book');
 const modal = document.querySelector('.modal');
 const closeBtn = document.querySelector('.close');
 
+/*----------OPEN AND CLOSE FORM CARD----------*/
 addBook.addEventListener('click', openModal);
 closeBtn.addEventListener('click', closeModal);
 window.addEventListener('click', outsideClick);
