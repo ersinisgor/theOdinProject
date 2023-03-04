@@ -10,7 +10,7 @@
   <body>
     <header>
       <h1>Library</h1>
-      <button type="menu">Sign in</button>
+      <button class="sign-in">Sign in</button>
     </header>
     <main>
       <aside>
@@ -57,44 +57,51 @@
           <div class="book-read unread">Read</div>
           <button>Remove</button>
         </div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        <div class="card">
+          <div class="book-label">Title</div>
+          <div class="book-title"></div>
+          <div class="book-label">Author</div>
+          <div class="book-author"></div>
+          <div class="book-label">Page</div>
+          <div class="book-page"></div>
+          <div class="book-read unread">Read</div>
+          <button>Remove</button>
+        </div>
+        <!-- <div class="card"></div> -->
       </section>
       <div class="modal">
         <div class="input-form">
           <div class="form-title">Add New Book</div>
-          <form action="" method="post">
+          <form action="" method="get">
             <label for="title"></label>
             <input
               type="text"
-              name=""
+              name="title"
               id="title"
               placeholder="Title"
-              required
+              value=""
             />
             <label for="author"></label>
             <input
               type="text"
-              name=""
+              name="author"
               id="author"
               placeholder="Author"
-              required
+              value=""
             />
             <label for="page"></label>
             <input
               type="number"
-              name=""
+              name="page"
               id="page"
               placeholder="Page"
-              required
+              value=""
             />
             <div class="check-read">
               <label for="read">Have you read it?</label>
-              <input type="checkbox" name="" id="read" />
+              <input type="checkbox" name="hasItBeenRead" id="read" />
             </div>
-            <button type="submit">Add</button>
+            <button class="add">Add</button>
           </form>
           <img src="img/close-svgrepo-com.svg" alt="" class="close" />
         </div>
