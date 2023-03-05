@@ -101,7 +101,18 @@ function addBookToLibrary(e) {
   // author.innerText = '';
   // page.innerText = '';
 
+  clearInput();
   closeModal();
 
   console.log(myLibrary);
+}
+
+function clearInput() {
+  const title = document.querySelector('#title');
+  const author = document.querySelector('#author');
+  const page = document.querySelector('#page');
+
+  title.value = '';
+  author.value = '';
+  page.value = '';
 }
