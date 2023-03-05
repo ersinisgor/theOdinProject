@@ -54,10 +54,10 @@
           <div class="book-author">JJ Rowling</div>
           <div class="book-label">Page</div>
           <div class="book-page">256</div>
-          <div class="book-read unread">Read</div>
+          <div class="book-read unread">Unread</div>
           <button>Remove</button>
         </div>
-        <div class="card">
+        <!-- <div class="card">
           <div class="book-label">Title</div>
           <div class="book-title"></div>
           <div class="book-label">Author</div>
@@ -66,13 +66,13 @@
           <div class="book-page"></div>
           <div class="book-read unread">Read</div>
           <button>Remove</button>
-        </div>
+        </div> -->
         <!-- <div class="card"></div> -->
       </section>
       <div class="modal">
         <div class="input-form">
           <div class="form-title">Add New Book</div>
-          <form action="" method="get">
+          <form action="" method="post" autocomplete="off">
             <label for="title"></label>
             <input
               type="text"
@@ -80,6 +80,7 @@
               id="title"
               placeholder="Title"
               value=""
+              autocomplete="off"
             />
             <label for="author"></label>
             <input
@@ -88,6 +89,7 @@
               id="author"
               placeholder="Author"
               value=""
+              autocomplete="off"
             />
             <label for="page"></label>
             <input
@@ -96,6 +98,7 @@
               id="page"
               placeholder="Page"
               value=""
+              autocomplete="off"
             />
             <div class="check-read">
               <label for="read">Have you read it?</label>
