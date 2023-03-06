@@ -263,6 +263,12 @@ form:has(input:focus) {
   width: 98%;
 }
 
+.card .text-content .header {
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 .card .text-content .footer {
   align-items: center;
   display: flex;
@@ -349,11 +355,11 @@ form:has(input:focus) {
   justify-content: space-between;
 }
 
-.text-with-title .category-info{
-  margin-bottom: .8rem;
+.text-with-title .category-info {
+  margin-bottom: 0.8rem;
 }
 
-.text-with-title .text{
+.text-with-title .text {
   height: 100%;
 }
 
