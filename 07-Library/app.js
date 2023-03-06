@@ -57,13 +57,17 @@ function createCard() {
 
 let myLibrary = [];
 
-function Book(title, author, page) {
+function Book(title, author, page, read) {
   this.title = title;
   this.author = author;
   this.page = page;
-  // this.read = function () {
-  //   if()
-  // }
+  this.read = read == true ? 'read' : 'Unread'; /* function () {
+    if (read == true) {
+      return 'Read';
+    } else {
+      return 'Unread';
+    }
+  }; */
 }
 
 function addBookToLibrary(e) {
@@ -72,12 +76,13 @@ function addBookToLibrary(e) {
   const title = document.querySelector('#title');
   const author = document.querySelector('#author');
   const page = document.querySelector('#page');
-  const hasItBeenRead = document.querySelector('#read');
+  let hasItBeenRead = document.querySelector('#read');
 
   const newBook = new Book(
     `${title.value}`,
     `${author.value}`,
-    `${page.value}`
+    `${page.value}`,
+    `${hasItBeenRead.checked}`
   );
   myLibrary.push(newBook);
 
@@ -92,27 +97,45 @@ function addBookToLibrary(e) {
   const allBookPageClasses = document.querySelectorAll('.book-page');
   const lastBookPageClassElement =
     allBookPageClasses[allBookPageClasses.length - 1];
+  const allBookReadClasses = document.querySelectorAll('.book-read');
+  const lastBookReadClassElement =
+    allBookReadClasses[allBookReadClasses.length - 1];
 
   lastBookTitleClassElement.innerHTML = title.value;
   lastBookAuthorClassElement.innerHTML = author.value;
   lastBookPageClassElement.innerHTML = page.value;
-
-  // title.innerText = '';
-  // author.innerText = '';
-  // page.innerText = '';
+  if (hasItBeenRead.checked == true) {
+    lastBookReadClassElement.classList.add('read');
+    lastBookReadClassElement.innerHTML = 'Read';
+  } else {
+    lastBookReadClassElement.classList.add('unread');
+    lastBookReadClassElement.innerHTML = 'Unread';
+  }
 
   clearInput();
   closeModal();
 
   console.log(myLibrary);
+  console.log(hasItBeenRead.checked);
 }
+
+// function getCheckboxValue() {
+//   if (hasItBeenRead.checked == true) {
+//   }
+// }
 
 function clearInput() {
   const title = document.querySelector('#title');
   const author = document.querySelector('#author');
   const page = document.querySelector('#page');
+  const hasItBeenRead = document.querySelector('#read');
 
   title.value = '';
   author.value = '';
   page.value = '';
+  hasItBeenRead.checked = false;
 }
+
+/*----------REMOVE CARD----------*/
+const remove = document.querySelectorAll('.card[button]');
+console.log(remove);
