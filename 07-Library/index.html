@@ -36,62 +36,56 @@
         </div>
         <img class="add-book" src="img/add-svgrepo-com.svg" alt="" />
       </aside>
-      <section>
-        <div class="card">
+      <section id="bookList">
+        <!-- <div class="card" data-index="">
           <div class="book-label">Title</div>
           <div class="book-title">Roman</div>
           <div class="book-label">Author</div>
           <div class="book-author">Hacı Bektaş</div>
           <div class="book-label">Page</div>
           <div class="book-page">256</div>
-          <div class="book-read read">Read</div>
+          <div class="book-read read" onclick="changeReadInfo(0)">Read</div>
           <button>Remove</button>
         </div>
-        <div class="card">
+        <div class="card" data-index="">
           <div class="book-label">Title</div>
           <div class="book-title">The Lord of The Rings</div>
           <div class="book-label">Author</div>
           <div class="book-author">JJ Rowling</div>
           <div class="book-label">Page</div>
           <div class="book-page">256</div>
-          <div class="book-read unread">Unread</div>
+          <div class="book-read">Unread</div>
           <button>Remove</button>
-        </div>
+        </div> -->
       </section>
       <div class="modal">
         <div class="input-form">
           <div class="form-title">Add New Book</div>
-          <form action="" method="" autocomplete="off">
+          <form>
             <label for="title"></label>
             <input
               type="text"
-              name="title"
-              id="title"
+              name="book-name"
+              id="book-name"
               placeholder="Title"
-              value=""
-              autocomplete="off"
             />
             <label for="author"></label>
             <input
               type="text"
-              name="author"
-              id="author"
+              name="author-name"
+              id="author-name"
               placeholder="Author"
-              value=""
-              autocomplete="off"
             />
             <label for="page"></label>
             <input
               type="number"
-              name="page"
-              id="page"
+              name="page-count"
+              id="page-count"
               placeholder="Page"
-              value=""
-              autocomplete="off"
             />
             <div class="check-read">
               <label for="read">Have you read it?</label>
-              <input type="checkbox" name="hasItBeenRead" id="read" />
+              <input type="checkbox" name="read-status" id="read-status" />
             </div>
             <button class="add">Add</button>
           </form>
