@@ -95,7 +95,7 @@ function addBookToLibrary(e) {
     readDiv.textContent = 'Unread';
   }
   readDiv.addEventListener('click', () => {
-    toggleReadStatus(index);
+    toggleReadStatus(cardDiv);
   });
 
   removeDiv.textContent = 'Remove';
@@ -109,6 +109,23 @@ function addBookToLibrary(e) {
   //   });
   // });
 
+  const numberOfBooksEl = document.querySelector('.number-of-books');
+  const readBookEl = document.querySelector('.read-book');
+  // const totalPagesEl = document.querySelector('.total-pages');
+  // number-of-books ve total-pages içeriğini güncelleme
+  numberOfBooksEl.textContent = myLibrary.length;
+  const totalPagesEl = document.querySelector('aside .total-pages');
+
+  let total = 0;
+  myLibrary.forEach(book => {
+    total += Number(book.pageCount);
+  });
+
+  totalPagesEl.textContent = total;
+
+  // read-book içeriğini güncelleme
+  readBookEl.textContent = myLibrary.filter(book => book.read === true).length;
+
   // Formun sıfırlanması
   addBookForm.reset();
   // Modal'ın kapatılması
@@ -117,19 +134,72 @@ function addBookToLibrary(e) {
   // console.log(removeButtons);
 }
 
+function toggleReadStatus(cardDiv) {
+  const index = cardDiv.getAttribute('data-index');
+  myLibrary[index].read = !myLibrary[index].read;
+  const readDiv = cardDiv.querySelector('.book-read');
+  readDiv.classList.toggle('read');
+  readDiv.classList.toggle('unread');
+  readDiv.textContent = myLibrary[index].read ? 'Read' : 'Unread';
+
+  const readBookEl = document.querySelector('.read-book');
+  // read-book içeriğini güncelleme
+  readBookEl.textContent = myLibrary.filter(book => book.read === true).length;
+}
+
+function removeBook(index) {
+  // myLibrary dizisinden kitabın silinmesi
+  myLibrary.splice(index, 1);
+
+  // Kartın DOM'dan kaldırılması
+  const cards = document.querySelectorAll('.card');
+  const cardToRemove = document.querySelector(`[data-index="${index}"]`);
+  cardToRemove.remove();
+
+  // Diğer kartların index numarasının güncellenmesi
+  cards.forEach((card, i) => {
+    const cardIndex = card.getAttribute('data-index');
+    if (cardIndex > index) {
+      card.setAttribute('data-index', cardIndex - 1);
+      const readButton = card.querySelector('.book-read');
+      readButton.removeEventListener('click', toggleReadStatus);
+      readButton.addEventListener('click', () => {
+        toggleReadStatus(card.getAttribute('data-index'));
+      });
+      const removeButton = card.querySelector('.remove');
+      removeButton.removeEventListener('click', removeBook);
+      removeButton.addEventListener('click', () => {
+        removeBook(card.getAttribute('data-index'));
+      });
+    }
+  });
+
+  updateTotalPages();
+}
+
+function updateTotalPages() {
+  const totalPagesEl = document.querySelector('aside .total-pages');
+  let total = 0;
+  for (let i = 0; i < myLibrary.length; i++) {
+    total += Number(myLibrary[i].pageCount);
+  }
+  totalPagesEl.textContent = total;
+  const numberOfBooksEl = document.querySelector('.number-of-books');
+  numberOfBooksEl.textContent = myLibrary.length;
+}
+
 // function displayIndex(index) {
 //   const displayIndex = document.querySelector(`[data-index = "${index}"]`);
 //   console.log(displayIndex);
 // }
 
-function toggleReadStatus(index) {
-  const readDivs = document.querySelectorAll('.book-read');
-
-  myLibrary[index].read = !myLibrary[index].read;
-  readDivs[index].classList.toggle('read');
-  readDivs[index].classList.toggle('unread');
-  readDivs[index].textContent = myLibrary[index].read ? 'Read' : 'Unread';
-}
+// function toggleReadStatus(index) {
+//   myLibrary[index].read = !myLibrary[index].read;
+//   const readDivs = document.querySelectorAll('.book-read');
+//   readDivs[index].classList.toggle('read');
+//   readDivs[index].classList.toggle('unread');
+//   readDivs[index].textContent = myLibrary[index].read ? 'Read' : 'Unread';
+// }
 
 // function removeBook(index) {
 //   const cardDiv = document.querySelectorAll('.card')[index];
@@ -171,14 +241,6 @@ function toggleReadStatus(index) {
 //   });
 // });
 
-function removeBook(index) {
-  const cardDiv = document.querySelector(`[data-index="${index}"]`);
-  cardDiv.remove();
-
-  // myLibrary dizisinden ilgili objeyi silin
-  // myLibrary.splice(index, 1);
-  // cardDiv.remove();
-}
 // function outsideClick(e) {
 //   if (e.target == modal) {
 //     closeModal();
