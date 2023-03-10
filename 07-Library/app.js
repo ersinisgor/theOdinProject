@@ -110,7 +110,7 @@ function addBookToLibrary(e) {
   // });
 
   const numberOfBooksEl = document.querySelector('.number-of-books');
-  const readBookEl = document.querySelector('.read-book');
+
   // const totalPagesEl = document.querySelector('.total-pages');
   // number-of-books ve total-pages içeriğini güncelleme
   numberOfBooksEl.textContent = myLibrary.length;
@@ -124,7 +124,8 @@ function addBookToLibrary(e) {
   totalPagesEl.textContent = total;
 
   // read-book içeriğini güncelleme
-  readBookEl.textContent = myLibrary.filter(book => book.read === true).length;
+  // readBookEl.textContent = myLibrary.filter(book => book.read === true).length;
+  updateReadBook();
 
   // Formun sıfırlanması
   addBookForm.reset();
@@ -174,6 +175,7 @@ function removeBook(index) {
     }
   });
 
+  updateReadBook();
   updateTotalPages();
 }
 
@@ -186,6 +188,17 @@ function updateTotalPages() {
   totalPagesEl.textContent = total;
   const numberOfBooksEl = document.querySelector('.number-of-books');
   numberOfBooksEl.textContent = myLibrary.length;
+}
+
+function updateReadBook() {
+  const readBookEl = document.querySelector('.read-book');
+  let count = 0;
+  for (let i = 0; i < myLibrary.length; i++) {
+    if (myLibrary[i].read === true) {
+      count++;
+    }
+  }
+  readBookEl.textContent = count;
 }
 
 // function displayIndex(index) {
