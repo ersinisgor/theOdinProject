@@ -6,4 +6,28 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-family: 'Permanent Marker', cursive;
+}
+
+#gameboard {
+  background-color: #faedcd;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid #ca5310;
+}
+
+.square {
+  height: 150px;
+  width: 150px;
+  background-color: #faedcd;
+  box-sizing: border-box;
+  border: 2px solid #ca5310;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 150px;
+  font-size: 100px;
+  cursor: pointer;
 }
