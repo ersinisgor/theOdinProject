@@ -6,24 +6,16 @@
 
 :root {
   --orange: rgb(242, 193, 78);
-  --winning-blocks: #2d414b;
+  --winning-blocks: #f76f8e;
 }
 
 body {
-  /* margin: auto; */
-
-  /* width: 100vw; */
-  /* margin-top: auto; */
-  /* padding: 40px; */
   height: 100vh;
-
   flex-direction: column;
   background-color: #37505c;
-  /* height: 100vh; */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* flex-direction: column; */
   color: var(--orange);
   font-family: 'Finger Paint', cursive;
 }
@@ -39,7 +31,6 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin: auto; */
 }
 
 #playerText {
@@ -47,22 +38,19 @@ h1 {
 }
 
 .left-content {
-  /* flex-basis: 20%; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* align-items: flex-start; */
   justify-content: space-around;
   height: 450px;
 }
 
 #gameboard {
   width: 450px;
+  min-height: 450px;
+  min-width: 450px;
   display: flex;
   flex-wrap: wrap;
-  /* flex-basis: 80%; */
-  /* margin-top: 20px; */
-  /* margin: 30px 0; */
 }
 
 .box {
@@ -142,39 +130,50 @@ footer {
   }
 }
 
-/* #gameboard {
-  background-color: #faedcd;
-  width: 450px;
-  height: 450px;
-  display: flex;
-  flex-wrap: wrap;
-  border: 2px solid #ca5310;
-} */
+@media (max-width: 1100px) {
+  /* for tablets */
+  body {
+    height: auto;
+  }
 
-/* .board-container {
-  background-color: #faedcd;
-  width: 450px;
-  height: 450px;
-  display: flex;
-  flex-wrap: wrap;
-  border: 2px solid #ca5310;
+  .box {
+    font-size: 80px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 4rem;
+    padding: 3rem;
+  }
+
+  .left-content {
+    height: 200px;
+  }
 }
 
-.cell {
-  height: 150px;
-  width: 150px;
-  background-color: #faedcd;
-  box-sizing: border-box;
-  border: 2px solid #ca5310;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 150px;
-  font-size: 100px;
-  cursor: pointer;
-}
+@media (max-width: 800px) {
+  /* for phones */
+  body {
+    height: auto;
+  }
 
-.cell:hover {
-  background-color: #fefae0; 
-  background-color: #e7c8a0;
-} */
+  #gameboard {
+    width: 300px;
+    min-height: 300px;
+    min-width: 300px;
+  }
+
+  .box {
+    height: 100px;
+    width: 100px;
+    font-size: 80px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .left-content {
+    height: 200px;
+  }
+}

@@ -1,90 +1,133 @@
 'use strict';
 
-let playerText = document.querySelector('#playerText');
-const restartBtn = document.querySelector('#restartBtn');
-const gameBoard = document.querySelector('#gameboard');
-const boxes = Array.from(document.getElementsByClassName('box'));
-let winnerIndicator = getComputedStyle(document.body).getPropertyValue(
-  '--winning-blocks'
-);
+// game object
+const Game = (() => {
+  // private functions and variables
+  // selects DOM elements
+  const playerText = document.querySelector('#playerText');
+  const restartBtn = document.querySelector('#restartBtn');
+  const gameBoard = document.querySelector('#gameboard');
+  const boxes = Array.from(document.getElementsByClassName('box'));
+  // gets the CSS variable value for the winning blocks color
+  const winnerIndicator = getComputedStyle(document.body).getPropertyValue(
+    '--winning-blocks'
+  );
 
-const O_TEXT = 'O';
-const X_TEXT = 'X';
-let currentPlayer = X_TEXT;
+  //declares variables
+  let currentPlayer;
+  let board = [];
 
-let spaces = ['', '', '', '', '', '', '', '', ''];
-
-function createBoard() {
-  spaces.forEach((_cell, index) => {
-    const cellElement = document.createElement('div');
-    cellElement.classList.add('box');
-    cellElement.id = index;
-    cellElement.addEventListener('click', boxClicked);
-    gameBoard.append(cellElement);
-  });
-}
-
-// const startGame = () => {
-//   boxes.forEach(box => box.addEventListener('click', boxClicked));
-// };
-
-function boxClicked(e) {
-  const id = e.target.id;
-
-  if (!spaces[id]) {
-    spaces[id] = currentPlayer;
-    e.target.innerText = currentPlayer;
-
-    if (playerHasWon() !== false) {
-      playerText = `${currentPlayer} has won!`;
-      let winning_blocks = playerHasWon();
-
-      winning_blocks.map(
-        box => (boxes[box].style.backgroundColor = winnerIndicator)
-      );
-      return;
-    }
-
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+  //creates the game board in the DOM
+  function createBoard() {
+    board.forEach((_cell, index) => {
+      const cellElement = document.createElement('div');
+      cellElement.classList.add('box');
+      cellElement.id = index;
+      cellElement.addEventListener('click', boxClicked);
+      gameBoard.append(cellElement);
+    });
   }
-}
 
-const winningCombos = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6],
-];
+  // handlesthe click event on game board boxes
+  function boxClicked(e) {
+    const id = e.target.id;
 
-function playerHasWon() {
-  for (const condition of winningCombos) {
-    let [a, b, c] = condition;
+    // if the clicked box is not already taken
+    if (!board[id]) {
+      // sets the current player's mark in the clicked box
+      board[id] = currentPlayer;
+      e.target.innerText = currentPlayer;
 
-    if (spaces[a] && spaces[a] === spaces[b] && spaces[a] === spaces[c]) {
-      return [a, b, c];
+      // checks if the current player has won
+      if (playerHasWon() !== false) {
+        // displays the winner and highlights the winning blocks
+        playerText.innerText = `${currentPlayer} has won! 🏆`;
+        let winning_blocks = playerHasWon();
+
+        const allBoxes = document.querySelectorAll('.box');
+
+        for (let i = 0; i < 3; i++) {
+          allBoxes[winning_blocks[i]].style.backgroundColor = winnerIndicator;
+        }
+
+        removeEventListeners();
+        return;
+
+        // checks if it's a tie game
+      } else if (!board.includes('')) {
+        playerText.innerText = "It's a tie! 🤝";
+        removeEventListeners();
+        return;
+      }
+
+      // switches the current player
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+      playerText.innerText = `${currentPlayer}'s turn`;
     }
+    console.log(board);
   }
-  return false;
-}
 
-restartBtn.addEventListener('click', restart);
+  // checks if the current player has won
+  function playerHasWon() {
+    // all the possible winning combinations on the game board
+    const winningCombos = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    // loops over all the winning combinations and checks if any of them are true
+    for (const condition of winningCombos) {
+      let [a, b, c] = condition;
 
-function restart() {
-  spaces = ['', '', '', '', '', '', '', '', ''];
+      if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+        return [a, b, c];
+      }
+    }
+    // return false if no winning condition is true
+    return false;
+  }
 
-  boxes.forEach(box => {
-    box.innerText = '';
-    box.style.backgroundColor = '';
-  });
+  // removes click event listeners from all game board boxes
+  function removeEventListeners() {
+    const allBoxes = document.querySelectorAll('.box');
+    allBoxes.forEach(box => {
+      box.removeEventListener('click', boxClicked);
+    });
+  }
 
-  playerText = 'Tic Tac Toe';
+  // restarts the game
+  function restart() {
+    // generate an empty board array
+    board = Array(9).fill('');
 
-  currentPlayer = X_TEXT;
-}
+    const allBoxes = document.querySelectorAll('.box');
 
-// startGame();
-createBoard();
+    allBoxes.forEach(box => {
+      box.innerText = '';
+      box.style.backgroundColor = '';
+      box.addEventListener('click', boxClicked);
+    });
+
+    playerText.innerText = 'X plays first!';
+    currentPlayer = 'X';
+  }
+
+  function start() {
+    playerText.innerText = 'X plays first!';
+    restartBtn.addEventListener('click', restart);
+    restart();
+    createBoard();
+  }
+
+  // public API
+  return {
+    start,
+  };
+})();
+
+Game.start();
