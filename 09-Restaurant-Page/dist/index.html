@@ -5,8 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Page</title>
+    <style>
+        header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header nav div{
+            padding: 10px;
+            margin: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+<header>
+    <nav>
+        <div class="home">Home</div>
+        <div class="menu">Menu</div>
+        <div class="contact">Contact</div>
+    </nav>
+</header>
     <div id="content"></div>
     <script src="main.js"></script>
 </body>
