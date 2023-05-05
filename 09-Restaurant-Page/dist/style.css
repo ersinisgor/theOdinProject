@@ -99,10 +99,14 @@ header nav .navbar ul li {
   margin: 2rem;
   color: var(--font-color);
   cursor: pointer;
+  height: 36px;
+  display: inline-block;
 }
 
 header nav .navbar ul li:hover {
-  transform: translateY(-15%);
+  /* transform: translateY(-10%); */
+  border-bottom: 2px solid #475569;
+  transform: translateY(-2px);
 }
 
 /*----MAIN----*/
