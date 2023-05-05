@@ -7,23 +7,52 @@
     <title>Restaurant Page</title>
     <link rel="shortcut icon" href="/img/fried-egg.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e9020a7b47.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div id="content">
       <header>
         <nav>
-          <div class="brand-container">
+          <!-- <div class="brand-container">
             <div class="brand">Donatello</div>
-          </div>
+          </div> -->
           <div class="navbar">
             <ul>
-              <li class="home">Home</li>
-              <li class="menu">Menu</li>
-              <li class="contact">Contact</li>
+              <li id="home">Home</li>
+              <li id="menu">Menu</li>
+              <li id="contact">Contact</li>
             </ul>
           </div>
         </nav>
       </header>
+      <main>
+        <div class="main-content">
+          <h1>Donatello</h1>
+          <div class="main-text">
+            <p>Welcome to Donatello home page.</p>
+            <p class="subtext">
+              We have been serving our customers with passion since 2002. Click
+              to discover the best breakfast restaurant in the region
+            </p>
+            <button href="#menu">Order Online</button>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          Copyright ©
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Created by <b><i>ersinisgor </i></b>
+        </p>
+        <a href="https://github.com/ersinisgor" target="_blank">
+          <i class="fab fa-github"></i
+        ></a>
+      </footer>
     </div>
     <script src="main.js"></script>
   </body>
