@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap');
+
+:root {
+  --font-color: #475569;
+  --brand-color: #be123c;
+  --font-background: rgba(255, 241, 242, 0.6);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background: url('img/brooke-lark-IDTEXXXfS44-unsplash.jpg');
+  background-size: cover;
+  background-position: 0 20%;
+  background-attachment: fixed;
+  font-size: 1.6rem;
+}
+
+li {
+  list-style: none;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: var(--font-background); */
+}
+
+header nav .brand-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: 'Dancing Script', cursive;
+  font-size: 8rem;
+  font-weight: 700;
+  /* padding: 0.3rem; */
+  color: var(--brand-color);
+  letter-spacing: 12px;
+}
+
+header nav .navbar ul {
+  padding: 0 2rem;
+  display: flex;
+}
+
+header nav .navbar ul li {
+  margin: 2rem;
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+header nav .navbar ul li:hover {
+  transform: translateY(-15%);
+}
