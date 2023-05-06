@@ -1,5 +1,3 @@
-function createHeader() {
-  const header = document.createElement('header');
+import initialize from './modules/load-page';
 
-  return header;
-}
+initialize();
