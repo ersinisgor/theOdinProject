@@ -1,4 +1,5 @@
 import { createHeader, createFooter } from './components';
+import loadMenu from './menu';
 
 function home_createMain() {
   const main = document.createElement('main');
@@ -34,8 +35,8 @@ function home_createMainText() {
     'We have been serving our customers with passion since 2002. Click to discover the best breakfast restaurant in the region';
 
   const button = document.createElement('button');
-  button.setAttribute('href', '#menu');
   button.innerText = 'Order Online';
+  button.addEventListener('click', loadMenu);
 
   mainText.appendChild(p);
   mainText.appendChild(subtext);
