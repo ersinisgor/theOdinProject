@@ -1,3 +1,8 @@
+// import homeMainContent from './home';
+import loadHome from './home';
+
+const content = document.querySelector('#content');
+
 /*----HEADER----*/
 function createHeader() {
   const header = document.createElement('header');
@@ -36,40 +41,35 @@ function createNav() {
 }
 
 /*----MAIN----*/
-function createMain() {
+
+function menuMain() {
   const main = document.createElement('main');
 
-  main.appendChild(createMainContent());
+  main.appendChild(menuMainContent());
 
   return main;
 }
 
-function createMainContent() {
+function contactMain() {
+  const main = document.createElement('main');
+
+  main.appendChild(contactMainContent());
+
+  return main;
+}
+
+function menuMainContent() {
   const mainContent = document.createElement('div');
-  mainContent.classList.add('main-content');
-
-  const h1 = document.createElement('h1');
-
-  mainContent.appendChild(h1);
-  mainContent.appendChild(createMainText());
+  // mainContent.classList.add('main-content');
 
   return mainContent;
 }
 
-function createMainText() {
-  const mainText = document.createElement('div');
-  mainText.classList.add('main-text');
+function contactMainContent() {
+  const mainContent = document.createElement('div');
+  mainContent.classList.add('main-content');
 
-  const p = document.createElement('p');
-  const subtext = document.createElement('p');
-  subtext.classList.add('subtext');
-  const button = document.createElement('button');
-
-  mainText.appendChild(p);
-  mainText.appendChild(subtext);
-  mainText.appendChild(button);
-
-  return mainText;
+  return mainContent;
 }
 
 /*----FOOTER----*/
@@ -90,4 +90,29 @@ function createFooter() {
   return footer;
 }
 
-export { createHeader, createMain, createFooter };
+function loadMenu() {
+  content.innerHTML = '';
+
+  content.appendChild(createHeader());
+  content.appendChild(menuMain());
+  content.appendChild(createFooter());
+}
+
+function loadContact() {
+  content.innerHTML = '';
+
+  content.appendChild(createHeader());
+  content.appendChild(contactMain());
+  content.appendChild(createFooter());
+}
+
+document.addEventListener('click', e => {
+  const target = e.target.innerText;
+
+  if (target === 'Home') loadHome();
+  if (target === 'Menu') loadMenu();
+  if (target === 'Contact') loadContact();
+});
+
+loadHome();
+export { createHeader, createFooter };

@@ -1,3 +1,3 @@
-import initialize from './modules/load-page';
+// import initialize from './modules/load-page';
 
-initialize();
+// initialize();
