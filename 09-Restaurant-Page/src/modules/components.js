@@ -68,5 +68,5 @@ document.addEventListener('click', e => {
   if (target === 'Contact') loadContact();
 });
 
-loadMenu();
+loadHome();
 export { createHeader, createFooter };

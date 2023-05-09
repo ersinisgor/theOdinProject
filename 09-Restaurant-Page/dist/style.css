@@ -126,7 +126,8 @@ header nav .navbar ul li:hover {
 }
 
 /*---HOME-MAIN----*/
-.home-main {
+.home-main,
+.contact-main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,12 +166,12 @@ main .main-content .subtext {
   /* display: flex;
   justify-content: center;
   align-items: center; */
-  height: 40rem;
+  height: 30rem;
   border-top: 3px solid #efedae;
   border-bottom: 3px solid #efedae;
   overflow: scroll;
   overflow-x: hidden;
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
   position: relative;
 }
 
@@ -234,6 +235,35 @@ main .main-content .subtext {
 
 .menu-content::-webkit-scrollbar {
   width: 1em;
+}
+
+/*----CONTACT-MAIN----*/
+/* .contact-main {
+  height: 30rem;
+  border-top: 3px solid #efedae;
+  border-bottom: 3px solid #efedae;
+} */
+
+.contact-main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 40rem;
+  gap: 1.5rem;
+  /* height: 90%; */
+  background: var(--font-background);
+  text-align: left;
+  padding: 1.5rem;
+}
+
+/* .image-container {
+  padding: 20px;
+} */
+
+.location {
+  width: 100%;
+  height: auto;
 }
 
 /*----FOOTER----*/
