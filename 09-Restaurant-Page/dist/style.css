@@ -45,13 +45,23 @@ li {
 }
 
 h1 {
-  border-bottom: 10px solid var(--brand-color);
+  /* border-bottom: 10px solid var(--brand-color);
+  border-bottom-width: 80%; */
   /* border-bottom-width: 20px; */
   font-family: 'Dancing Script', cursive;
   font-size: 8rem;
   color: #be123c;
   font-weight: 700;
   letter-spacing: 12px;
+}
+
+hr {
+  width: 80%;
+  height: 10px;
+  /* border-style: solid; */
+  border: 0;
+  outline: none;
+  background: var(--brand-color);
 }
 
 button {
@@ -109,7 +119,7 @@ header nav .navbar ul li:hover {
   transform: translateY(-2px);
 }
 
-/*----MAIN----*/
+/*---HOME-MAIN----*/
 main {
   display: flex;
   justify-content: center;
@@ -123,9 +133,10 @@ main .main-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   width: 40rem;
 
-  height: 90%;
+  /* height: 90%; */
   background: var(--font-background);
 }
 
@@ -135,12 +146,42 @@ main .main-content .main-text {
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 2.5rem;
+  padding: 2rem;
 }
 
 main .main-content .subtext {
   font-size: 1rem;
+  margin: 50px 0;
 }
+
+/*----MENU-MAIN----*/
+.menu-main {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.menu-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  height: 90%;
+  max-height: calc(100% - 48px);
+  background: #f2f2f2;
+}
+
+.menu-container {
+  width: 80%;
+}
+
+.menu-main-content::-webkit-scrollbar-thumb {
+  background-color: #c59d5f;
+  outline: 1px solid white;
+}
+
+/* .menu-content::-webkit-scrollbar {
+  width: 1em;
+} */
 
 /*----FOOTER----*/
 footer {

@@ -14,9 +14,12 @@ function home_createMainContent() {
   mainContent.classList.add('main-content');
 
   const h1 = document.createElement('h1');
-  h1.innerText = 'Donatello';
+  h1.innerText = 'Donald';
+
+  const hr = document.createElement('hr');
 
   mainContent.appendChild(h1);
+  mainContent.appendChild(hr);
   mainContent.appendChild(home_createMainText());
 
   return mainContent;
@@ -27,7 +30,7 @@ function home_createMainText() {
   mainText.classList.add('main-text');
 
   const p = document.createElement('p');
-  p.innerText = 'Welcome to Donatello home page.';
+  p.innerText = 'Welcome to Donald home page.';
 
   const subtext = document.createElement('p');
   subtext.classList.add('subtext');
