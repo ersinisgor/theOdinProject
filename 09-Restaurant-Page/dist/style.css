@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --font-color: #475569;
+  --background: #f2f2f2;
   --brand-color: #be123c;
   --border-color: #efedae;
   --font-background: rgba(255, 241, 242, 0.6);
-  --background: #f2f2f2;
+  --font-color: #475569;
 }
 
 *,
@@ -19,10 +19,10 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  height: 100vh;
   text-align: center;
   width: 100vw;
-  height: 100vh;
-  font-size: 1.6rem;
 }
 
 #content {
@@ -32,55 +32,55 @@ body {
   background-position: center 42%;
   background-attachment: fixed;
 
-  height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: space-between;
 }
 
 main {
-  height: 70%;
   border-top: 4px solid var(--border-color);
   border-bottom: 4px solid var(--border-color);
+  height: 70%;
   padding: 2rem 0;
   position: relative;
 }
 
 li {
-  list-style: none;
   font-weight: 500;
   letter-spacing: 4px;
+  list-style: none;
 }
 
 h1 {
+  color: var(--brand-color);
   font-family: 'Dancing Script', cursive;
   font-size: 8rem;
-  color: var(--brand-color);
   font-weight: 700;
   letter-spacing: 12px;
 }
 
 hr {
+  background: var(--brand-color);
+  border: 0;
   width: 80%;
   height: 10px;
-  border: 0;
-  outline: none;
-  background: var(--brand-color);
   margin: auto;
+  outline: none;
 }
 
 button {
+  background: var(--brand-color);
+  border: none;
+  border-radius: 10px;
+  color: var(--border-color);
+  cursor: pointer;
   font-family: inherit;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 2px;
-  color: var(--border-color);
-  border: none;
-  background: var(--brand-color);
-  border-radius: 10px;
-  width: 180px;
   padding: 0.5rem 1rem;
-  cursor: pointer;
+  width: 180px;
 }
 
 button:hover {
@@ -88,28 +88,28 @@ button:hover {
 }
 
 img {
-  width: 100px;
   height: 68px;
+  width: 100px;
 }
 
 /*----HEADER----*/
 header nav {
+  align-items: center;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
 }
 
 header nav .navbar ul {
-  padding: 0 2rem;
   display: flex;
+  padding: 0 2rem;
 }
 
 header nav .navbar ul li {
-  margin: 2rem;
   color: var(--font-color);
   cursor: pointer;
-  height: 36px;
   display: inline-block;
+  margin: 2rem;
+  height: 36px;
 }
 
 header nav .navbar ul li:hover {
@@ -122,31 +122,31 @@ header nav .navbar ul li:hover {
 .menu-main,
 .contact-main {
   height: 90%;
-  top: 50%;
   left: 50%;
   position: absolute;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
 /*----HOME-LOAD----*/
 .home-main,
 .contact-main {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .home-main .home-main-content {
-  width: 40rem;
   background: var(--font-background);
+  width: 40rem;
 }
 
 .home-main .home-main-content .main-text {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   height: 100%;
+  justify-content: space-between;
   padding: 2rem;
 }
 
@@ -157,9 +157,9 @@ header nav .navbar ul li:hover {
 
 /*----MENU-LOAD----*/
 .menu-main {
+  margin: auto;
   overflow: scroll;
   overflow-x: hidden;
-  margin: auto;
 }
 
 .menu-main::-webkit-scrollbar-thumb {
@@ -171,8 +171,9 @@ header nav .navbar ul li:hover {
 }
 
 .menu-main .menu-main-content {
-  min-width: 758px;
   background: var(--background);
+  min-width: 758px;
+  max-width: 1000px;
 }
 
 .menu-main .menu-main-content .menu-container {
@@ -183,14 +184,14 @@ header nav .navbar ul li:hover {
 }
 
 .menu-main .menu-main-content .menu-container .menu-items {
-  padding: 1rem;
+  align-items: center;
   cursor: pointer;
-  height: 210px;
-  width: 210px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 210px;
   gap: 0.6rem;
+  padding: 1rem;
+  width: 210px;
 }
 
 .menu-main .menu-main-content .menu-container .menu-items:hover {
@@ -198,8 +199,8 @@ header nav .navbar ul li:hover {
 }
 
 .menu-items .menu-image {
-  width: 100px;
   height: 100px;
+  width: 100px;
 }
 
 .menu-items .menu-text {
@@ -207,21 +208,21 @@ header nav .navbar ul li:hover {
 }
 
 .menu-items .menu-price {
-  font-size: 1rem;
   color: var(--brand-color);
+  font-size: 1rem;
 }
 
 /*----CONTACT-LOAD----*/
 .contact-main .contact-main-content {
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 40rem;
-  gap: 1.5rem;
   background: var(--font-background);
+  display: flex;
+  font-size: 1.2rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
   text-align: left;
   padding: 1.5rem;
+  width: 40rem;
 }
 
 .contact-main .contact-main-content .address {
@@ -229,8 +230,9 @@ header nav .navbar ul li:hover {
 }
 
 .contact-main .contact-main-content .image-container .location {
-  width: 100%;
+  cursor: pointer;
   height: auto;
+  width: 100%;
 }
 
 /*----FOOTER----*/

@@ -1,4 +1,3 @@
-// import homeMainContent from './home';
 import loadHome from './home';
 import loadMenu from './menu';
 import loadContact from './contact';
@@ -47,7 +46,6 @@ function createMain() {
   return main;
 }
 
-/*----FOOTER----*/
 function createFooter() {
   const footer = document.createElement('footer');
 
@@ -65,17 +63,6 @@ function createFooter() {
   return footer;
 }
 
-// function init() {
-//   const content = document.querySelector('#content');
-//   content.innerHTML = '';
-
-//   content.appendChild(createHeader());
-//   content.appendChild(createMain());
-//   content.appendChild(createFooter());
-
-//   return content;
-// }
-
 document.addEventListener('click', e => {
   const target = e.target.innerText;
 
@@ -85,6 +72,5 @@ document.addEventListener('click', e => {
 });
 
 loadHome();
-// init();
 
 export { createHeader, createMain, createFooter, content };

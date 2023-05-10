@@ -1,4 +1,4 @@
-import { createHeader, createFooter } from './components';
+import { createHeader, createFooter, content } from './components';
 
 function contact_createMain() {
   const main = document.createElement('main');
@@ -16,11 +16,6 @@ function contact_createMainContent() {
   const mainContent = document.createElement('div');
   mainContent.classList.add('contact-main-content');
 
-  // const h1 = document.createElement('h1');
-  // h1.innerText = 'Contact';
-
-  // const hr = document.createElement('hr');
-
   const tel = document.createElement('p');
   tel.classList.add('tel');
   tel.innerText = `☎ +90 266 11 22 333`;
@@ -37,8 +32,6 @@ function contact_createMainContent() {
   location.src = `../dist/img/Location.jpg`;
   imageContainer.appendChild(location);
 
-  // mainContent.appendChild(h1);
-  // mainContent.appendChild(hr);
   mainContent.appendChild(tel);
   mainContent.appendChild(address);
   mainContent.appendChild(imageContainer);

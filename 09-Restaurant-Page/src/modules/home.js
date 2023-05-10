@@ -3,7 +3,6 @@ import loadMenu from './menu';
 
 function home_createMain() {
   const main = document.createElement('main');
-  // main.classList.add('home-main');
 
   const mainContainer = document.createElement('div');
   mainContainer.classList.add('home-main');
