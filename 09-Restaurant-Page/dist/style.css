@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Montserrat:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
   --font-color: #475569;
   --brand-color: #be123c;
+  --border-color: #efedae;
   --font-background: rgba(255, 241, 242, 0.6);
+  --background: #f2f2f2;
 }
 
 *,
@@ -26,7 +27,6 @@ body {
 
 #content {
   background: url('img/brooke-lark-IDTEXXXfS44-unsplash.jpg');
-  /* background-size: 90%; */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center 42%;
@@ -38,6 +38,14 @@ body {
   justify-content: space-between;
 }
 
+main {
+  height: 70%;
+  border-top: 4px solid var(--border-color);
+  border-bottom: 4px solid var(--border-color);
+  padding: 2rem 0;
+  position: relative;
+}
+
 li {
   list-style: none;
   font-weight: 500;
@@ -45,12 +53,9 @@ li {
 }
 
 h1 {
-  /* border-bottom: 10px solid var(--brand-color);
-  border-bottom-width: 80%; */
-  /* border-bottom-width: 20px; */
   font-family: 'Dancing Script', cursive;
   font-size: 8rem;
-  color: #be123c;
+  color: var(--brand-color);
   font-weight: 700;
   letter-spacing: 12px;
 }
@@ -58,7 +63,6 @@ h1 {
 hr {
   width: 80%;
   height: 10px;
-  /* border-style: solid; */
   border: 0;
   outline: none;
   background: var(--brand-color);
@@ -70,13 +74,17 @@ button {
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 2px;
-  color: #efedae;
+  color: var(--border-color);
   border: none;
-  background: #be123c;
+  background: var(--brand-color);
   border-radius: 10px;
   width: 180px;
   padding: 0.5rem 1rem;
   cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 img {
@@ -84,27 +92,12 @@ img {
   height: 68px;
 }
 
-button:hover {
-  transform: scale(1.1);
-}
-
+/*----HEADER----*/
 header nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  /* background-color: var(--font-background); */
 }
-
-/* header nav .brand-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  font-family: 'Dancing Script', cursive;
-  font-size: 8rem;
-  font-weight: 700;
-  color: var(--brand-color);
-  letter-spacing: 12px;
-} */
 
 header nav .navbar ul {
   padding: 0 2rem;
@@ -120,34 +113,35 @@ header nav .navbar ul li {
 }
 
 header nav .navbar ul li:hover {
-  /* transform: translateY(-10%); */
-  border-bottom: 2px solid #475569;
+  border-bottom: 2px solid var(--font-color);
   transform: translateY(-2px);
 }
 
-/*---HOME-MAIN----*/
+/*----MAIN----*/
+.home-main,
+.menu-main,
+.contact-main {
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+/*----HOME-LOAD----*/
 .home-main,
 .contact-main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30rem;
-  border-top: 3px solid #efedae;
-  border-bottom: 3px solid #efedae;
 }
 
-main .main-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+.home-main .home-main-content {
   width: 40rem;
-
-  /* height: 90%; */
   background: var(--font-background);
 }
 
-main .main-content .main-text {
+.home-main .home-main-content .main-text {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -156,49 +150,39 @@ main .main-content .main-text {
   padding: 2rem;
 }
 
-main .main-content .subtext {
+.home-main .home-main-content .main-text .subtext {
   font-size: 1rem;
-  margin: 50px 0;
+  margin: 3rem 0;
 }
 
-/*----MENU-MAIN----*/
+/*----MENU-LOAD----*/
 .menu-main {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  height: 30rem;
-  border-top: 3px solid #efedae;
-  border-bottom: 3px solid #efedae;
   overflow: scroll;
   overflow-x: hidden;
-  /* padding: 2rem 0; */
-  position: relative;
+  margin: auto;
 }
 
-.menu-main-content {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* width: 70%; */
-  width: 758px;
-  /* height: 90%;
-  max-height: calc(100% - 48px); */
-  background: #f2f2f2;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
+.menu-main::-webkit-scrollbar-thumb {
+  background-color: var(--brand-color);
 }
 
-.menu-container {
+.menu-main::-webkit-scrollbar {
+  width: 0.25em;
+}
+
+.menu-main .menu-main-content {
+  min-width: 758px;
+  background: var(--background);
+}
+
+.menu-main .menu-main-content .menu-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  /* width: 80%; */
   padding: 2rem;
 }
 
-.menu-items {
+.menu-main .menu-main-content .menu-container .menu-items {
   padding: 1rem;
   cursor: pointer;
   height: 210px;
@@ -206,62 +190,45 @@ main .main-content .subtext {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 400px; */
   gap: 0.6rem;
 }
 
-.menu-items:hover {
-  background: #efedae;
+.menu-main .menu-main-content .menu-container .menu-items:hover {
+  background: var(--border-color);
 }
 
-.menu-image {
+.menu-items .menu-image {
   width: 100px;
   height: 100px;
 }
 
-.menu-text {
+.menu-items .menu-text {
   font-size: 0.8rem;
 }
 
-.menu-price {
+.menu-items .menu-price {
   font-size: 1rem;
   color: var(--brand-color);
 }
 
-.menu-main-content::-webkit-scrollbar-thumb {
-  background-color: #c59d5f;
-  outline: 1px solid white;
-}
-
-.menu-content::-webkit-scrollbar {
-  width: 1em;
-}
-
-/*----CONTACT-MAIN----*/
-/* .contact-main {
-  height: 30rem;
-  border-top: 3px solid #efedae;
-  border-bottom: 3px solid #efedae;
-} */
-
-.contact-main-content {
+/*----CONTACT-LOAD----*/
+.contact-main .contact-main-content {
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: center; */
   width: 40rem;
   gap: 1.5rem;
-  /* height: 90%; */
   background: var(--font-background);
   text-align: left;
   padding: 1.5rem;
 }
 
-/* .image-container {
-  padding: 20px;
-} */
+.contact-main .contact-main-content .address {
+  font-size: 1rem;
+}
 
-.location {
+.contact-main .contact-main-content .image-container .location {
   width: 100%;
   height: auto;
 }
@@ -279,7 +246,6 @@ footer {
   height: 2.5rem;
   justify-content: center;
   margin-top: 1.5rem;
-  /* margin-bottom: auto; */
   padding-bottom: 0;
   width: 100%;
 }

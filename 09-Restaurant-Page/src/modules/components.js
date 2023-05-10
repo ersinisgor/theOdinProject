@@ -5,7 +5,6 @@ import loadContact from './contact';
 
 const content = document.querySelector('#content');
 
-/*----HEADER----*/
 function createHeader() {
   const header = document.createElement('header');
 
@@ -18,10 +17,8 @@ function createNav() {
   const nav = document.createElement('nav');
   const navbar = document.createElement('div');
   navbar.classList.add('navbar');
-  nav.appendChild(navbar);
 
   const ul = document.createElement('ul');
-  navbar.appendChild(ul);
 
   const li_home = document.createElement('li');
   li_home.setAttribute('id', 'home');
@@ -35,11 +32,19 @@ function createNav() {
   li_contact.setAttribute('id', 'contact');
   li_contact.innerText = 'Contact';
 
+  nav.appendChild(navbar);
+  navbar.appendChild(ul);
   ul.appendChild(li_home);
   ul.appendChild(li_menu);
   ul.appendChild(li_contact);
 
   return nav;
+}
+
+function createMain() {
+  const main = document.createElement('main');
+
+  return main;
 }
 
 /*----FOOTER----*/
@@ -60,6 +65,17 @@ function createFooter() {
   return footer;
 }
 
+// function init() {
+//   const content = document.querySelector('#content');
+//   content.innerHTML = '';
+
+//   content.appendChild(createHeader());
+//   content.appendChild(createMain());
+//   content.appendChild(createFooter());
+
+//   return content;
+// }
+
 document.addEventListener('click', e => {
   const target = e.target.innerText;
 
@@ -69,4 +85,6 @@ document.addEventListener('click', e => {
 });
 
 loadHome();
-export { createHeader, createFooter };
+// init();
+
+export { createHeader, createMain, createFooter, content };

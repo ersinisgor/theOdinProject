@@ -1,18 +1,22 @@
-import { createHeader, createFooter } from './components';
+import { createHeader, createFooter, content } from './components';
 import loadMenu from './menu';
 
 function home_createMain() {
   const main = document.createElement('main');
-  main.classList.add('home-main');
+  // main.classList.add('home-main');
 
-  main.appendChild(home_createMainContent());
+  const mainContainer = document.createElement('div');
+  mainContainer.classList.add('home-main');
+
+  main.appendChild(mainContainer);
+  mainContainer.appendChild(home_createMainContent());
 
   return main;
 }
 
 function home_createMainContent() {
   const mainContent = document.createElement('div');
-  mainContent.classList.add('main-content');
+  mainContent.classList.add('home-main-content');
 
   const h1 = document.createElement('h1');
   h1.innerText = 'Donald';

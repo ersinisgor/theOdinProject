@@ -2,9 +2,12 @@ import { createHeader, createFooter } from './components';
 
 function menu_createMain() {
   const main = document.createElement('main');
-  main.classList.add('menu-main');
 
-  main.appendChild(menu_createMainContent());
+  const mainContainer = document.createElement('div');
+  mainContainer.classList.add('menu-main');
+
+  main.appendChild(mainContainer);
+  mainContainer.appendChild(menu_createMainContent());
 
   return main;
 }

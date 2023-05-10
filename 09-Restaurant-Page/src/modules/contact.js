@@ -2,9 +2,12 @@ import { createHeader, createFooter } from './components';
 
 function contact_createMain() {
   const main = document.createElement('main');
-  main.classList.add('contact-main');
 
-  main.appendChild(contact_createMainContent());
+  const mainContainer = document.createElement('div');
+  mainContainer.classList.add('contact-main');
+
+  main.appendChild(mainContainer);
+  mainContainer.appendChild(contact_createMainContent());
 
   return main;
 }
