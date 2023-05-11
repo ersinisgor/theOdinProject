@@ -49,7 +49,7 @@ function createMenuItems(name, price) {
   const menuImage = document.createElement('div');
   menuImage.classList.add('menu-image');
   const image = document.createElement('img');
-  image.src = `../img/${name.toLowerCase()}.png`;
+  image.src = `img/${name.toLowerCase()}.png`;
   menuImage.appendChild(image);
 
   const menuTitle = document.createElement('p');
