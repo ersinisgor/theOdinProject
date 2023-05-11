@@ -1,7 +1,17 @@
-// import loadHome from './modules/home';
+import loadHome from './modules/home';
+import loadMenu from './modules/menu';
+import loadContact from './modules/contact';
 
-// loadHome();
+const content = document.querySelector('#content');
 
-// import initialize from './modules/load-page';
+document.addEventListener('click', e => {
+  const target = e.target.innerText;
 
-// initialize();
+  if (target === 'Home') loadHome();
+  if (target === 'Menu') loadMenu();
+  if (target === 'Contact') loadContact();
+});
+
+loadHome();
+
+export { content };

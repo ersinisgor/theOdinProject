@@ -1,9 +1,3 @@
-import loadHome from './home';
-import loadMenu from './menu';
-import loadContact from './contact';
-
-const content = document.querySelector('#content');
-
 function createHeader() {
   const header = document.createElement('header');
 
@@ -40,12 +34,6 @@ function createNav() {
   return nav;
 }
 
-function createMain() {
-  const main = document.createElement('main');
-
-  return main;
-}
-
 function createFooter() {
   const footer = document.createElement('footer');
 
@@ -63,14 +51,4 @@ function createFooter() {
   return footer;
 }
 
-document.addEventListener('click', e => {
-  const target = e.target.innerText;
-
-  if (target === 'Home') loadHome();
-  if (target === 'Menu') loadMenu();
-  if (target === 'Contact') loadContact();
-});
-
-loadHome();
-
-export { createHeader, createMain, createFooter, content };
+export { createHeader, createFooter };

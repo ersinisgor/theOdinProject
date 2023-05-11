@@ -1,4 +1,5 @@
-import { createHeader, createFooter, content } from './components';
+import { createHeader, createFooter } from './components';
+import { content } from '../index';
 
 function contact_createMain() {
   const main = document.createElement('main');
@@ -29,7 +30,7 @@ function contact_createMainContent() {
 
   const location = document.createElement('img');
   location.classList.add('location');
-  location.src = `../img/Location.jpg`;
+  location.src = `img/Location.jpg`;
   imageContainer.appendChild(location);
 
   mainContent.appendChild(tel);

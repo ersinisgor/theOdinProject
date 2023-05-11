@@ -1,4 +1,5 @@
-import { createHeader, createFooter, content } from './components';
+import { createHeader, createFooter } from './components';
+import { content } from '../index';
 import loadMenu from './menu';
 
 function home_createMain() {
@@ -59,41 +60,5 @@ function loadHome() {
   content.appendChild(home_createMain());
   content.appendChild(createFooter());
 }
-
-// function createMainContent() {
-//   const mainContent = document.createElement('div');
-//   mainContent.classList.add('main-content');
-
-//   const h1 = document.createElement('h1');
-//   h1.innerText = 'Donatello';
-
-//   mainContent.appendChild(h1);
-//   mainContent.appendChild(createMainText());
-
-//   return mainContent;
-// }
-
-// function createMainText() {
-//   const mainText = document.createElement('div');
-//   mainText.classList.add('main-text');
-
-//   const p = document.createElement('p');
-//   p.innerText = 'Welcome to Donatello home page.';
-
-//   const subtext = document.createElement('p');
-//   subtext.classList.add('subtext');
-//   subtext.innerText =
-//     'We have been serving our customers with passion since 2002. Click to discover the best breakfast restaurant in the region';
-
-//   const button = document.createElement('button');
-//   button.setAttribute('href', '#menu');
-//   button.innerText = 'Order Online';
-
-//   mainText.appendChild(p);
-//   mainText.appendChild(subtext);
-//   mainText.appendChild(button);
-
-//   return mainText;
-// }
 
 export default loadHome;

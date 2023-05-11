@@ -1,4 +1,5 @@
-import { createHeader, createFooter, content } from './components';
+import { createHeader, createFooter } from './components';
+import { content } from '../index';
 
 function menu_createMain() {
   const main = document.createElement('main');
