@@ -29,7 +29,7 @@ function contact_createMainContent() {
 
   const location = document.createElement('img');
   location.classList.add('location');
-  location.src = `../dist/img/Location.jpg`;
+  location.src = `../img/Location.jpg`;
   imageContainer.appendChild(location);
 
   mainContent.appendChild(tel);
