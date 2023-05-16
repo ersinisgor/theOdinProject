@@ -6,9 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
     <link rel="shortcut icon" href="./img/note.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e9020a7b47.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>Todo List</h1>
+    <header>
+      <h1>Todo List</h1>
+    </header>
+    <main>
+      <nav>
+        <div class="project-list">
+          <button>All Tasks</button>
+          <button>Today</button>
+          <button>This Week</button>
+        </div>
+      </nav>
+    </main>
+    <footer>
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Created by <b><i>ersinisgor </i></b>
+      </p>
+      <a href="https://github.com/ersinisgor" target="_blank">
+        <i class="fab fa-github"></i
+      ></a>
+    </footer>
     <script src="main.js"></script>
   </body>
 </html>

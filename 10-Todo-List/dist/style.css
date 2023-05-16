@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --one: #4d244e;
+  --two: #aa8e8d;
+  --three: #ae5f75;
+  --border: #2c3e50;
+  --five: #6d335c;
+  --six: #d37b79;
+  --border-2: #34495e;
+  --four: #f6bd66;
+  --seven: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  background: #f7edfa;
+  margin: 8px 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--five);
+  color: var(--six);
+}
+
+main {
+  display: flex;
+  min-height: calc(100vh - 88px - 43px);
+}
+
+nav {
+  width: 300px;
+  min-width: 250px;
+  padding: 20px;
+  background-color: #f0daf4;
+  text-align: left;
+}
+
+/*----FOOTER----*/
+footer {
+  background: var(--five);
+  align-items: center;
+  color: var(--two);
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  gap: 0.5rem;
+  height: 2.7rem;
+  justify-content: center;
+  /* margin-top: 1.5rem; */
+  padding-bottom: 0;
+  width: 100%;
+}
+
+p i {
+  margin-right: 0;
+}
+
+.fa-github {
+  color: var(--two);
+  font-size: 1.25rem;
+}
+
+.fa-github:hover {
+  animation: github-animation 0.5s ease infinite alternate;
+}
+
+@keyframes github-animation {
+  from {
+    transform: translateY(0rem) scale(1.2);
+  }
+  to {
+    transform: translateY(-0.3rem) scale(1.2);
+  }
+}
