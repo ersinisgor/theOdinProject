@@ -8,7 +8,7 @@ Feel free to explore the different projects and folders within this repository t
 
 ---
 
-<u>**Live Demos**</u>
+<ins>**Live Demos**</ins>
 
 - 01 - Landing Page: https://landing-page-er.netlify.app/
 - 02 - Rock Paper Scissors Game: https://rockpaperscissors-game-er.netlify.app/
