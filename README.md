@@ -6,7 +6,9 @@ The projects cover a wide range of web development topics, including HTML, CSS, 
 
 Feel free to explore the different projects and folders within this repository to see what I have accomplished throughout The Odin Project course.
 
-> Live Previews
+---
+
+<u>**Live Demos**</u>
 
 - 01 - Landing Page: https://landing-page-er.netlify.app/
 - 02 - Rock Paper Scissors Game: https://rockpaperscissors-game-er.netlify.app/
@@ -16,3 +18,4 @@ Feel free to explore the different projects and folders within this repository t
 - 07 - Library: https://library-er.netlify.app/
 - 08 - Tic Tac Toe: https://tictactoe-game-er.netlify.app/
 - 09 - Restaurant Page: https://restaurant-page-er.netlify.app/
+- 10 - Todo List:
