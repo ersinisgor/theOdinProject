@@ -19,13 +19,74 @@
       </header>
       <main>
         <nav>
-          <div class="project-list">
-            <button>All Tasks</button>
-            <button>Today</button>
-            <button>This Week</button>
+          <div class="default-projects">
+            <div class="btn-container active">
+              <button class="btn_nav">
+                <i class="fa-solid fa-thumbtack"></i>All Tasks
+              </button>
+              <div class="task-count-container">
+                <div class="task-count">4</div>
+              </div>
+            </div>
+
+            <div class="btn-container">
+              <button class="btn_nav">
+                <i class="fa-solid fa-calendar-day"></i>Today
+              </button>
+              <div class="task-count-container">
+                <div class="task-count">7</div>
+              </div>
+            </div>
+
+            <div class="btn-container">
+              <button class="btn_nav">
+                <i class="fa-solid fa-calendar-week"></i>This Week
+              </button>
+              <div class="task-count-container">
+                <div class="task-count"></div>
+              </div>
+            </div>
           </div>
+
           <h2>Projects</h2>
+
+          <div class="users-projects">
+            <div class="btn-container">
+              <button class="btn_nav">
+                <i class="fa-sharp fa-solid fa-list-check"></i>Sport
+              </button>
+              <div class="task-count-container">
+                <div class="task-count">12</div>
+              </div>
+            </div>
+
+            <div class="btn-container">
+              <button class="btn_nav">
+                <i class="fa-sharp fa-solid fa-list-check"></i>Software
+              </button>
+              <div class="task-count-container">
+                <div class="task-count">88</div>
+              </div>
+            </div>
+
+            <div class="btn-container">
+              <button class="btn_nav">
+                <i class="fa-sharp fa-solid fa-list-check"></i>Daily
+              </button>
+              <div class="task-count-container">
+                <div class="task-count">5</div>
+              </div>
+            </div>
+          </div>
         </nav>
+        <div class="display">
+          <div class="task-display-container">
+            <div class="top-row">
+              <div class="top-title">All Tasks</div>
+              <div class="top-due-date">Due Date</div>
+            </div>
+          </div>
+        </div>
       </main>
       <footer>
         <p>

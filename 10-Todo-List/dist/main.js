@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://10-todo-list/./src/index.js?");
+eval("const btnContainer = document.querySelectorAll('.btn-container');\n\nbtnContainer.forEach(nav => {\n  nav.addEventListener('click', selectProject);\n});\n\nfunction selectProject(e) {\n  btnContainer.forEach(select => {\n    select.classList.remove('active');\n  });\n  e.target.parentElement.classList.add('active');\n}\n\n\n//# sourceURL=webpack://10-todo-list/./src/index.js?");
 
 /***/ })
 
