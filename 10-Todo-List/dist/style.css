@@ -22,6 +22,15 @@
   padding: 0;
 }
 
+*::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: var(--two);
+}
+
+*::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
 html {
   overflow-x: hidden;
   font-size: 62.5%; /* 1rem = 10px (browser default is 16px) */
@@ -30,6 +39,17 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 1.6rem;
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  text-align: left;
+  background: transparent;
+  color: var(--five);
 }
 
 h2 {
@@ -58,6 +78,7 @@ nav {
   padding: 2rem;
   background-color: var(--nine);
   text-align: left;
+  border-right: 0.1rem solid var(--four);
   /* font-size: 1.6rem; */
 }
 
@@ -66,25 +87,18 @@ i {
   margin-right: 0.8rem;
 }
 
+.default-projects {
+  padding-right: 3.4rem;
+}
+
 .btn_nav {
-  border: none;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
   width: 90%;
   /* padding: 1rem 2rem; */
   /* border-radius: 0.8rem; */
-  cursor: pointer;
-  text-align: left;
+
   /* margin: 0.4rem 0; */
   /* background: var(--nine); */
-  background: transparent;
-  color: var(--five);
 }
-
-/* .btn_nav:hover {
-  background: var(--eight);
-} */
 
 .btn-container {
   padding: 1rem 2rem;
@@ -95,35 +109,97 @@ i {
   align-items: center;
 }
 
-.btn-container:hover {
+.btn-container:hover,
+.add-project:hover {
   background: var(--eight);
 }
 
-.btn-container.active {
+.btn-container:hover .close {
+  visibility: visible;
+}
+
+/* .btn-container .btn_nav.active {
+  background: var(--eight);
+} */
+
+.btn_nav.active {
   font-size: 1.7rem;
   font-weight: bold;
-  background: var(--eight);
+}
+
+.default-projects .task-count-container {
+  margin-right: 0;
+}
+
+.users-projects {
+  height: 30rem;
+  overflow-y: auto;
+}
+
+.project-btn-right-side {
+  display: flex;
+  align-items: center;
 }
 
 .task-count-container {
-  padding: 0.2rem;
-  height: 2.2rem;
-  width: 2.2rem;
+  /* padding: 0.4rem; */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
   background: var(--five);
   border-radius: 50%;
+  margin-right: 1rem;
 }
 
 .task-count {
   color: var(--four);
-  margin: auto;
-  font-size: 1.2rem;
-  position: relative;
-  top: 0.3rem;
-  right: 0;
-  text-align: center;
-  line-height: 100%;
-  cursor: pointer;
+  /* margin: auto; */
+  font-size: 1rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+  /* top: 0.3rem; */
+  /* right: 0; */
+  /* align-self: center; */
+  /* text-align: center; */
+  /* line-height: 100%; */
+  /* cursor: pointer; */
   /* font-weight: bold; */
+}
+
+.close {
+  width: 2.4rem;
+  height: 2.4rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  visibility: hidden;
+}
+
+i.fa-xmark {
+  margin-right: 0;
+  /* position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+/*---Add Project---*/
+.add-project {
+  padding: 1rem 2rem;
+  border-radius: 0.8rem;
+}
+
+.btn_add-project {
+  width: 100%;
 }
 
 /*---Display Panel---*/

@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("const btnContainer = document.querySelectorAll('.btn-container');\n\nbtnContainer.forEach(nav => {\n  nav.addEventListener('click', selectProject);\n});\n\nfunction selectProject(e) {\n  btnContainer.forEach(select => {\n    select.classList.remove('active');\n  });\n  e.target.parentElement.classList.add('active');\n}\n\n\n//# sourceURL=webpack://10-todo-list/./src/index.js?");
+eval("const btnNav = document.querySelectorAll('.btn_nav');\n\nbtnNav.forEach(nav => {\n  nav.addEventListener('click', selectProject);\n});\n\nfunction selectProject(e) {\n  btnNav.forEach(select => {\n    select.classList.remove('active');\n  });\n  e.target.classList.add('active');\n  const el = e.target.parentElement;\n  console.log(el);\n}\n\n\n//# sourceURL=webpack://10-todo-list/./src/index.js?");
 
 /***/ })
 

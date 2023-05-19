@@ -1,12 +1,14 @@
-const btnContainer = document.querySelectorAll('.btn-container');
+const btnNav = document.querySelectorAll('.btn_nav');
 
-btnContainer.forEach(nav => {
+btnNav.forEach(nav => {
   nav.addEventListener('click', selectProject);
 });
 
 function selectProject(e) {
-  btnContainer.forEach(select => {
+  btnNav.forEach(select => {
     select.classList.remove('active');
   });
-  e.target.parentElement.classList.add('active');
+  e.target.classList.add('active');
+  const el = e.target.parentElement;
+  console.log(el);
 }
