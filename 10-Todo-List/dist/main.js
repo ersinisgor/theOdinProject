@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("const btnNav = document.querySelectorAll('.btn_nav');\nconst btnContainer = document.querySelectorAll('.btn-container');\n\nbtnNav.forEach(nav =>\n  nav.addEventListener('click', function () {\n    selectProject(this);\n  })\n);\n\nfunction selectProject(project) {\n  const buttons = [...btnNav, ...btnContainer];\n\n  buttons.forEach(nav => nav.classList.remove('active'));\n  project.classList.add('active');\n  project.parentElement.classList.add('active');\n}\n\n\n//# sourceURL=webpack://10-todo-list/./src/index.js?");
+eval("const btnNav = document.querySelectorAll('.btn_nav');\nconst btnContainer = document.querySelectorAll('.btn-container');\nconst todos = document.querySelectorAll('.todo');\n\nbtnNav.forEach(nav =>\n  nav.addEventListener('click', function () {\n    selectProject(this);\n  })\n);\n\nfunction selectProject(project) {\n  const buttons = [...btnNav, ...btnContainer];\n\n  buttons.forEach(nav => nav.classList.remove('active'));\n  project.classList.add('active');\n  project.parentElement.classList.add('active');\n}\n\ntodos.forEach(todoCheck =>\n  todoCheck.addEventListener('click', function () {\n    makeTodoComplete(this);\n  })\n);\n\nfunction makeTodoComplete(check) {\n  check.checked\n    ? check.nextElementSibling.classList.add('complete')\n    : check.nextElementSibling.classList.remove('complete');\n}\n\n\n//# sourceURL=webpack://10-todo-list/./src/index.js?");
 
 /***/ })
 
