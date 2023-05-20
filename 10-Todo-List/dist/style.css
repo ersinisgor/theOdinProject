@@ -79,7 +79,6 @@ nav {
   background-color: var(--nine);
   text-align: left;
   border-right: 0.1rem solid var(--four);
-  /* font-size: 1.6rem; */
 }
 
 i {
@@ -93,11 +92,6 @@ i {
 
 .btn_nav {
   width: 90%;
-  /* padding: 1rem 2rem; */
-  /* border-radius: 0.8rem; */
-
-  /* margin: 0.4rem 0; */
-  /* background: var(--nine); */
 }
 
 .btn-container {
@@ -118,9 +112,9 @@ i {
   visibility: visible;
 }
 
-/* .btn-container .btn_nav.active {
+.btn-container.active {
   background: var(--eight);
-} */
+}
 
 .btn_nav.active {
   font-size: 1.7rem;
@@ -142,7 +136,6 @@ i {
 }
 
 .task-count-container {
-  /* padding: 0.4rem; */
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -155,19 +148,10 @@ i {
 
 .task-count {
   color: var(--four);
-  /* margin: auto; */
   font-size: 1rem;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  /* position: relative; */
-  /* top: 0.3rem; */
-  /* right: 0; */
-  /* align-self: center; */
-  /* text-align: center; */
-  /* line-height: 100%; */
-  /* cursor: pointer; */
-  /* font-weight: bold; */
 }
 
 .close {
@@ -186,10 +170,6 @@ i {
 
 i.fa-xmark {
   margin-right: 0;
-  /* position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); */
 }
 
 /*---Add Project---*/
@@ -228,7 +208,6 @@ footer {
   gap: 0.8rem;
   height: 4.3rem;
   justify-content: center;
-  /* margin-top: 1.5rem; */
   padding-bottom: 0;
   width: 100%;
 }
@@ -265,11 +244,19 @@ p i {
   html {
     font-size: 56.75%; /* 1rem = 9px (browser default is 16px) */
   }
+
+  .users-projects {
+    height: 35rem;
+  }
 }
 
 @media (max-width: 768px) {
   html {
     font-size: 50%; /* 1rem = 8px (browser default is 16px) */
+  }
+
+  .users-projects {
+    height: 45rem;
   }
 }
 
