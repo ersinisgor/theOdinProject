@@ -191,10 +191,46 @@ i.fa-xmark {
 
 .top-row {
   display: flex;
-  justify-content: space-between;
   font-weight: bold;
   font-size: 1.8rem;
   letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.top-project-name {
+  font-size: 3.2rem;
+  width: 55rem;
+}
+
+.top-priority {
+  width: 11rem;
+  font-size: 1.4rem;
+  align-self: self-end;
+  text-align: center;
+}
+
+.top-due-date {
+  font-size: 1.4rem;
+  width: 8rem;
+  align-self: self-end;
+  text-align: center;
+}
+
+.todo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background: var(--three); */
+  background: var(--two);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.7s ease;
+  color: var(--seven);
+}
+
+.todo-bar:hover {
+  transform: scale(1.005);
+  box-shadow: 0px 0px 7px 2px var(--five);
+  transition: all 0.2s ease;
 }
 
 input[type='checkbox'] {
@@ -202,21 +238,21 @@ input[type='checkbox'] {
 }
 
 label {
-  background-color: var(--three);
-  width: 100%;
+  width: 55rem;
   display: flex;
   height: 4rem;
-  color: var(--seven);
+  /* color: var(--seven); */
   cursor: pointer;
   align-items: center;
-  border-bottom: 1px solid var(--border);
-  transition: all 0.7s ease;
+  /* border-bottom: 1px solid var(--border);
+  transition: all 0.7s ease; */
+  box-sizing: content-box;
 }
 
 label::before {
   content: '';
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
   display: block;
   background: var(--seven);
   border-radius: 100%;
@@ -234,6 +270,83 @@ label.complete {
 label.complete::before {
   background: url(./img/check-circle-solid-svgrepo-com.png) no-repeat center
     center / cover;
+}
+
+.complete .priority {
+  text-decoration: underline;
+}
+
+.priority {
+  height: 4rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  padding: 0 1rem;
+}
+
+.priority .high {
+  border-radius: 1rem;
+  background: var(--five);
+  color: var(--four);
+  padding: 0.5rem 1rem;
+}
+
+.priority .medium {
+  border-radius: 1rem;
+  background: var(--four);
+  color: var(--seven);
+  padding: 0.5rem 1rem;
+}
+
+.priority .low {
+  border-radius: 1rem;
+  background: var(--eight);
+  color: var(--five);
+  padding: 0.5rem 1rem;
+}
+
+.todo-right-panel {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  /* border-bottom: 1px solid var(--border); */
+  transition: all 0.7s ease;
+  color: var(--seven);
+}
+
+.todo-due-date {
+  width: 8.3rem;
+  font-size: 1rem;
+  padding: 0 1rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.edit {
+  padding: 0 1rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+svg {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.delete {
+  padding: 0 1rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.delete svg {
+  height: 2rem;
+  width: 2rem;
 }
 
 /* .todo-bar {
