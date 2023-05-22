@@ -1,17 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
-  --one: #4d244e;
-  --two: #aa8e8d;
-  --three: #ae5f75;
+  --primary-color: #f7edfa;
+  --secondary-color: #f6bd66;
+  --tertiary-color: #f0daf4;
+  --primary-font: #6d335c;
+  --secondary-font: #aa8e8d;
+  --tertiary-font: #fff;
+  --h2: #ae5f75;
   --border: #2c3e50;
-  --five: #6d335c;
-  --six: #d37b79;
   --border-2: #34495e;
-  --four: #f6bd66;
-  --seven: #fff;
-  --eight: #f7edfa;
-  --nine: #f0daf4;
 }
 
 *,
@@ -24,15 +22,16 @@
 
 *::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background-color: var(--two);
+  background-color: var(--secondary-font);
 }
 
 *::-webkit-scrollbar {
   width: 0.6rem;
+  height: 0.6rem;
 }
 
 html {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   font-size: 62.5%; /* 1rem = 10px (browser default is 16px) */
 }
 
@@ -49,12 +48,12 @@ button {
   cursor: pointer;
   text-align: left;
   background: transparent;
-  color: var(--five);
+  color: var(--primary-font);
 }
 
 h2 {
   padding: 1rem 2rem;
-  color: var(--three);
+  color: var(--h2);
 }
 
 header {
@@ -62,8 +61,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 2rem 4rem;
-  background-color: var(--five);
-  color: var(--four);
+  background-color: var(--primary-font);
+  color: var(--secondary-color);
 }
 
 main {
@@ -76,9 +75,9 @@ nav {
   width: 30rem;
   min-width: 25rem;
   padding: 2rem;
-  background-color: var(--nine);
+  background-color: var(--tertiary-color);
   text-align: left;
-  border-right: 0.1rem solid var(--four);
+  border-right: 0.1rem solid var(--secondary-color);
 }
 
 i {
@@ -105,7 +104,7 @@ i {
 
 .btn-container:hover,
 .add-project:hover {
-  background: var(--eight);
+  background: var(--primary-color);
 }
 
 .btn-container:hover .close {
@@ -113,7 +112,7 @@ i {
 }
 
 .btn-container.active {
-  background: var(--eight);
+  background: var(--primary-color);
 }
 
 .btn_nav.active {
@@ -141,13 +140,13 @@ i {
   align-items: center;
   height: 2rem;
   width: 2rem;
-  background: var(--five);
+  background: var(--primary-font);
   border-radius: 50%;
   margin-right: 1rem;
 }
 
 .task-count {
-  color: var(--four);
+  color: var(--secondary-color);
   font-size: 1rem;
   display: inline-flex;
   justify-content: center;
@@ -160,7 +159,7 @@ i {
   text-align: center;
   cursor: pointer;
   border-radius: 0.4rem;
-  position: relative;
+  /* position: relative; */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -199,38 +198,31 @@ i.fa-xmark {
 
 .top-project-name {
   font-size: 3.2rem;
-  width: 55rem;
+  color: #111;
+  /* width: 55rem; */
 }
 
-.top-priority {
-  width: 11rem;
-  font-size: 1.4rem;
-  align-self: self-end;
-  text-align: center;
-}
-
-.top-due-date {
-  font-size: 1.4rem;
-  width: 8rem;
-  align-self: self-end;
-  text-align: center;
-}
-
+/*----TODOS----*/
 .todo-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background: var(--three); */
-  background: var(--two);
+  background: var(--secondary-font);
   border-bottom: 1px solid var(--border);
   transition: all 0.7s ease;
-  color: var(--seven);
+  color: var(--tertiary-font);
 }
 
 .todo-bar:hover {
   transform: scale(1.005);
-  box-shadow: 0px 0px 7px 2px var(--five);
+  box-shadow: 0px 0px 7px 2px var(--primary-font);
   transition: all 0.2s ease;
+}
+
+.todo-bar.complete {
+  background-color: var(--primary-color);
+  color: var(--secondary-font);
+  border-bottom: 1px solid var(--border-2);
 }
 
 input[type='checkbox'] {
@@ -238,33 +230,34 @@ input[type='checkbox'] {
 }
 
 label {
-  width: 55rem;
-  display: flex;
+  line-height: 4rem;
+  /* width: 55rem; */
+  width: auto;
+  display: inline-block;
   height: 4rem;
-  /* color: var(--seven); */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   cursor: pointer;
   align-items: center;
-  /* border-bottom: 1px solid var(--border);
-  transition: all 0.7s ease; */
   box-sizing: content-box;
 }
 
 label::before {
   content: '';
-  width: 1.8rem;
+  min-width: 1.8rem;
   height: 1.8rem;
-  display: block;
-  background: var(--seven);
+  display: inline-block;
+  background: var(--tertiary-font);
   border-radius: 100%;
   margin: 0 2rem;
   transition: border 0.7s ease;
+  position: relative;
+  top: 0.3rem;
 }
 
 label.complete {
-  background-color: var(--eight);
-  color: var(--two);
   text-decoration: line-through;
-  border-bottom: 1px solid var(--border-2);
 }
 
 label.complete::before {
@@ -272,8 +265,13 @@ label.complete::before {
     center / cover;
 }
 
-.complete .priority {
-  text-decoration: underline;
+.todo-right-panel {
+  /* min-width: 24.6rem; */
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  transition: all 0.7s ease;
+  color: var(--tertiary-font);
 }
 
 .priority {
@@ -283,36 +281,37 @@ label.complete::before {
   align-items: center;
   font-weight: 500;
   padding: 0 1rem;
+  cursor: pointer;
 }
 
-.priority .high {
+.priority .box {
   border-radius: 1rem;
-  background: var(--five);
-  color: var(--four);
   padding: 0.5rem 1rem;
+  width: 4.8rem;
+  text-align: center;
 }
 
-.priority .medium {
-  border-radius: 1rem;
-  background: var(--four);
-  color: var(--seven);
-  padding: 0.5rem 1rem;
+.priority .box.high {
+  background: var(--primary-font);
+  color: var(--secondary-color);
 }
 
-.priority .low {
-  border-radius: 1rem;
-  background: var(--eight);
-  color: var(--five);
-  padding: 0.5rem 1rem;
+.priority .box.medium {
+  background: var(--secondary-color);
+  color: var(--tertiary-font);
 }
 
-.todo-right-panel {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  /* border-bottom: 1px solid var(--border); */
-  transition: all 0.7s ease;
-  color: var(--seven);
+.priority .box.low {
+  background: var(--primary-color);
+  color: var(--primary-font);
+}
+
+.todo-bar.complete .priority .box.high,
+.todo-bar.complete .priority .box.medium,
+.todo-bar.complete .priority .box.low,
+.todo-bar.complete .todo-due-date {
+  background: var(--primary-color);
+  color: var(--secondary-font);
 }
 
 .todo-due-date {
@@ -330,6 +329,7 @@ label.complete::before {
   height: 4rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 svg {
@@ -342,30 +342,19 @@ svg {
   height: 4rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .delete svg {
-  height: 2rem;
-  width: 2rem;
+  height: 1.6rem;
+  width: 1.6rem;
 }
-
-/* .todo-bar {
-  display: flex;
-  height: 4rem;
-  color: var(--seven);
-  background-color: var(--three);
-}
-
-.todo-bar.checked {
-  background-color: var(--five);
-  color: var(--two);
-} */
 
 /*----FOOTER----*/
 footer {
-  background: var(--five);
+  background: var(--primary-font);
   align-items: center;
-  color: var(--two);
+  color: var(--secondary-font);
   display: flex;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.4rem;
@@ -381,7 +370,7 @@ p i {
 }
 
 .fa-github {
-  color: var(--two);
+  color: var(--secondary-font);
   font-size: 2rem;
 }
 
@@ -404,6 +393,12 @@ p i {
   }
 }
 
+@media (max-width: 1160px) {
+  .display {
+    width: 78rem;
+  }
+}
+
 @media (max-width: 1024px) {
   html {
     font-size: 56.75%; /* 1rem = 9px (browser default is 16px) */
@@ -411,6 +406,18 @@ p i {
 
   .users-projects {
     height: 35rem;
+  }
+
+  label {
+    width: 45rem;
+  }
+
+  .top-project-name {
+    width: 45rem;
+  }
+
+  nav {
+    min-width: 20rem;
   }
 }
 

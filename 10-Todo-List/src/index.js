@@ -22,8 +22,18 @@ todos.forEach(todoCheck =>
   })
 );
 
+// function makeTodoComplete(check) {
+//   check.checked
+//     ? check.nextElementSibling.classList.add('complete')
+//     : check.nextElementSibling.classList.remove('complete');
+// }
+
 function makeTodoComplete(check) {
-  check.checked
-    ? check.nextElementSibling.classList.add('complete')
-    : check.nextElementSibling.classList.remove('complete');
+  if (check.checked) {
+    check.parentElement.classList.add('complete');
+    check.nextElementSibling.classList.add('complete');
+  } else {
+    check.parentElement.classList.remove('complete');
+    check.nextElementSibling.classList.remove('complete');
+  }
 }
