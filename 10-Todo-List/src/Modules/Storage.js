@@ -1,3 +1,11 @@
+//---Projeleri Construction Function olarak oluşturur
+class Project {
+  constructor(projectName, projectTodos) {
+    this.projectName = projectName;
+    this.projectTodos = projectTodos;
+  }
+}
+
 //----Todo'ları Construction Function olarak oluşturur
 class Todo {
   constructor(title, description, priority, dueDate) {
@@ -5,6 +13,7 @@ class Todo {
     this.description = description;
     this.priority = priority;
     this.dueDate = dueDate;
+    // this.todoIndex = 0;
   }
 }
 

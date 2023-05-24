@@ -1,4 +1,4 @@
-import { createDisplay } from './Modules/UI';
+import { display } from './Modules/CreateDOM';
 
 // const allTodos = document.querySelectorAll('.todo');
 
@@ -8,4 +8,4 @@ import { createDisplay } from './Modules/UI';
 //   })
 // );
 
-createDisplay();
+display();
