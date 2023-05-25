@@ -1,13 +1,13 @@
 'use strict';
 
-// Card öğesi içindeki "Ekle" düğmesinin seçilmesi
+// Selection of the "Add" button within the card element
 const addBookInput = document.querySelector('.add');
 addBookInput.addEventListener('click', addBookToLibrary);
 
 const addBookForm = document.querySelector('form');
 
 /*----------OPEN AND CLOSE FORM MODAL----------*/
-// Ekrandaki "+" düğmesinin seçilmesi ve tıklandığında "Modal" açılması
+// Selection of the "+" button on the screen and openning the modal when clicked
 const addBook = document.querySelector('.add-book');
 const modal = document.querySelector('.modal');
 const closeBtn = document.querySelector('.close');
@@ -24,7 +24,7 @@ function closeModal() {
   modal.style.display = 'none';
 }
 
-// Kitap objesi için sınıf tanımlaması
+// Class definition for a book object
 class Book {
   constructor(title, author, pageCount, read) {
     this.title = title;
@@ -34,33 +34,33 @@ class Book {
   }
 }
 
-// Kitapların saklandığı dizi
+// Array to store the books
 let myLibrary = [];
 
-// Yeni kitap ekleme fonksiyonu
+// Function to add a new book
 function addBookToLibrary(e) {
   e.preventDefault();
 
-  // Formdaki bilgilerin alınması
+  // Retrieving information from the form
   const title = document.getElementById('book-name').value;
   const author = document.getElementById('author-name').value;
   const pageCount = document.getElementById('page-count').value;
   const read = document.getElementById('read-status').checked;
 
-  // Yeni kitap objesi oluşturulması
+  // Creating a new book object
   const newBook = new Book(title, author, pageCount, read);
 
-  // Kitap objesinin myLibrary dizisine eklenmesi
+  // Adding the book object to the myLibrary array
   myLibrary.push(newBook);
   const index = myLibrary.indexOf(newBook);
 
-  // Yeni "Card" oluşturma
+  // Creating new "Card"
   const cardDiv = document.createElement('div');
   cardDiv.setAttribute('data-index', index);
   const section = document.querySelector('section');
   section.appendChild(cardDiv).classList.add('card');
 
-  // myLibrary içindeki kitap bilgisinin "Card"a eklenmesi
+  // Adding book information from myLibrary to the "Card"
   const titleLabelDiv = document.createElement('div');
   const titleDiv = document.createElement('div');
   const authorLabelDiv = document.createElement('div');
@@ -86,7 +86,7 @@ function addBookToLibrary(e) {
   pageLabelDiv.innerText = 'Page';
   pageDiv.textContent = pageCount;
 
-  // Okunma bilgisine göre sınıf adı verilmesi
+  // Adding class based on read status
   if (read) {
     readDiv.classList.add('read');
     readDiv.textContent = 'Read';
@@ -112,7 +112,8 @@ function addBookToLibrary(e) {
   const numberOfBooksEl = document.querySelector('.number-of-books');
 
   // const totalPagesEl = document.querySelector('.total-pages');
-  // number-of-books ve total-pages içeriğini güncelleme
+
+  // Updating the content of numberOfBooks and totalPages
   numberOfBooksEl.textContent = myLibrary.length;
   const totalPagesEl = document.querySelector('aside .total-pages');
 
@@ -123,13 +124,14 @@ function addBookToLibrary(e) {
 
   totalPagesEl.textContent = total;
 
-  // read-book içeriğini güncelleme
+  // Updating the content of readBook
+
   // readBookEl.textContent = myLibrary.filter(book => book.read === true).length;
   updateReadBook();
 
-  // Formun sıfırlanması
+  // Resetting the form
   addBookForm.reset();
-  // Modal'ın kapatılması
+  // Closing the modal
   closeModal();
   // console.log(myLibrary);
   // console.log(removeButtons);
