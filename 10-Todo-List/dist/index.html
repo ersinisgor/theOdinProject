@@ -17,6 +17,29 @@
       <h1>Todo List</h1>
     </header>
     <main>
+      <!-- Add Todo Modal -->
+      <div class="overlay-add-todo-modal">
+        <form class="add-todo-modal">
+          <div class="add-todo-modal-header">
+            <h2>All Task</h2>
+            <i class="fa-regular fa-circle-xmark"></i>
+          </div>
+          <div class="add-todo-modal-content">
+            <div class="todo-title">
+              <label for="">Title</label>
+              <input type="text" name="" id="">
+            </div>
+            <div class="todo-priority">
+              <label for="">Priority</label>
+              <input type="text" name="" id="">
+            </div>
+            <div class="todo-due-date">
+              <label for="">Due Date</label>
+              <input type="date" name="" id="">
+            </div>
+          </div>
+        </form>
+      </div>
       <!-- Navigation -->
       <nav>
         <div class="default-projects">
@@ -110,8 +133,8 @@
 
 
           <div class="add-project-container">
-            <div class="add-project">
-              <button class="btn_add-project">
+            <div class="add">
+              <button class="btn_add">
                 <i class="fa-sharp fa-solid fa-folder-plus"></i>
                 Add Project
               </button>

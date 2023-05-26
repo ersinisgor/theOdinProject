@@ -1,4 +1,4 @@
-import { todos } from './Storage';
+import { todos } from './Todo';
 
 //-----Nav alanında hangi projeye tıklandığını gösterir
 const btnNav = document.querySelectorAll('.btn_nav');
@@ -29,14 +29,47 @@ function makeTodoComplete(check) {
   }
 }
 
-function addTodoToArray() {}
-
-// todoIndex = 0;
-
-function addTodoToDisplay(title) {
-  // const label = this.document.querySelector('label');
-  console.log(title);
-  // this.textContent = `${todos[0].title}`;
+// Ekle butonuna tıklandığında todo girişi formunu açar
+function openModal() {
+  const overlayAddTodoModal = document.querySelector('.overlay-add-todo-modal');
+  // const addTodoModal = document.querySelector('.add-todo-modal');
+  overlayAddTodoModal.classList.add('open');
+  overlayAddTodoModal.firstElementChild.classList.add('open');
+  // addTodoModal.classList.add('open');
 }
 
-export { selectProject, makeTodoComplete };
+// Çarpı butonuna tıklandığında todo girişi formunu kapatır
+const closeMark = document.querySelector('.fa-circle-xmark');
+closeMark.addEventListener('click', closeModal);
+
+function closeModal() {
+  const overlayAddTodoModal = document.querySelector('.overlay-add-todo-modal');
+
+  overlayAddTodoModal.classList.remove('open');
+  overlayAddTodoModal.firstElementChild.classList.remove('open');
+}
+
+// function createFormElement() {
+//   const main = document.querySelector('main');
+//   const nav = document.querySelector('nav');
+
+//   const addTodoModal = document.createElement('div');
+//   addTodoModal.classList.add('add-todo-modal');
+
+//   main.insertBefore(addTodoModal, nav);
+// }
+
+// function openTodoForm() {
+//   createFormElement();
+// }
+
+// function getTodoInfo(){
+//   openTodoForm();
+// }
+
+// function addTodo() {
+//   getTodoInfo();
+//   createNewTodo();
+// }
+
+export { selectProject, makeTodoComplete, openModal };

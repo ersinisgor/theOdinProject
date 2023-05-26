@@ -70,6 +70,68 @@ main {
   min-height: calc(100vh - 8.8rem - 4.3rem);
 }
 
+/*---Add Todo Modal---*/
+.overlay-add-todo-modal {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 5rem;
+  backdrop-filter: blur(7px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.overlay-add-todo-modal.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.add-todo-modal {
+  /* position: relative; */
+  width: 50rem;
+  height: 30rem;
+  /* border: 2px solid black; */
+  border-radius: 1rem;
+  box-shadow: 0px 0px 15px 3px var(--primary-font);
+  background: var(--primary-color);
+  transform: scale(0.5);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.add-todo-modal.open {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.add-todo-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary-color);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.add-todo-modal-header i {
+  font-size: 3rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  color: var(--h2);
+}
+
+.add-todo-modal-content {
+  padding: 2rem;
+}
+
 /*---Navigation Panel---*/
 nav {
   width: 30rem;
@@ -171,13 +233,14 @@ i.fa-xmark {
   margin-right: 0;
 }
 
-/*---Add Project---*/
-.add-project {
+/*---Add Project / Todo---*/
+.add {
   padding: 1rem 2rem;
   border-radius: 0.8rem;
+  font-weight: 500;
 }
 
-.btn_add-project {
+.btn_add {
   width: 100%;
 }
 
@@ -229,7 +292,7 @@ input[type='checkbox'] {
   display: none;
 }
 
-label {
+.todo-label {
   line-height: 4rem;
   /* width: 55rem; */
   width: auto;
@@ -243,7 +306,7 @@ label {
   box-sizing: content-box;
 }
 
-label::before {
+.todo-label::before {
   content: '';
   min-width: 1.8rem;
   height: 1.8rem;
@@ -256,11 +319,11 @@ label::before {
   top: 0.3rem;
 }
 
-label.complete {
+.todo-label.complete {
   text-decoration: line-through;
 }
 
-label.complete::before {
+.todo-label.complete::before {
   background: url(./img/check-circle-solid-svgrepo-com.png) no-repeat center
     center / cover;
 }

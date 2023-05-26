@@ -1,24 +1,14 @@
-import { todos } from './Storage';
-import { makeTodoComplete } from './UI';
+import { todos } from './Todo';
+import { makeTodoComplete, openModal } from './UI';
 
 function display() {
-  createDisplay(
-    'All Tasks',
-    0,
-    todos[0].title,
-    todos[0].priority,
-    todos[0].dueDate
-  );
+  createDisplay();
 }
 
+let todoIndex = 0;
+
 //----Display ekranının HTML yapısını oluşturur
-function createDisplay(
-  projectName,
-  todoIndex,
-  title,
-  todoPriority,
-  todoDueDate
-) {
+function createDisplay() {
   const nav = document.querySelector('nav');
 
   const display = document.createElement('div');
@@ -35,11 +25,26 @@ function createDisplay(
   todosDisplayContainer.classList.add('todos-display-container');
 
   display.appendChild(todosDisplayContainer);
-  todosDisplayContainer.appendChild(createTopRow());
+  todosDisplayContainer.appendChild(createTopRow('All Tasks'));
   todosDisplayContainer.appendChild(createTodosDisplay());
+  todosDisplayContainer.appendChild(createAddTodoButton());
+
+  function createAddTodoButton() {
+    const add = document.createElement('div');
+    add.classList.add('add');
+
+    const btn_add = document.createElement('button');
+    btn_add.classList.add('btn_add');
+    btn_add.innerHTML = `<i class="fa-solid fa-circle-plus"></i>Add Todo`;
+    btn_add.addEventListener('click', openModal);
+
+    add.appendChild(btn_add);
+
+    return add;
+  }
 
   //----Display ekranının başlık satırını oluşturur
-  function createTopRow() {
+  function createTopRow(projectName) {
     const topRow = document.createElement('div');
     topRow.classList.add('top-row');
 
@@ -57,13 +62,18 @@ function createDisplay(
     const todosDisplay = document.createElement('div');
     todosDisplay.classList.add('todos-display');
 
-    todosDisplay.appendChild(createTodoBar());
+    todos.forEach(todo => {
+      const todoBar = createTodoBar(todo);
+      todosDisplay.appendChild(todoBar);
+    });
+
+    // todosDisplay.appendChild(createTodoBar());
 
     return todosDisplay;
   }
 
   //---- todo-bar'ın çerçevesini oluşturur
-  function createTodoBar() {
+  function createTodoBar(todo) {
     const todoBar = document.createElement('div');
     todoBar.classList.add('todo-bar');
     todoBar.setAttribute('data-index', `${todoIndex}`);
@@ -78,9 +88,10 @@ function createDisplay(
       makeTodoComplete(this);
     });
 
-    const label = document.createElement('label');
-    label.htmlFor = `todo-${todoIndex}`;
-    label.textContent = title;
+    const todoLabel = document.createElement('label');
+    todoLabel.classList.add('todo-label');
+    todoLabel.htmlFor = `todo-${todoIndex}`;
+    todoLabel.textContent = todo.title;
     // label.textContent = todos.title;
     // label.textContent = `${todos[0].title}`;
 
@@ -91,12 +102,12 @@ function createDisplay(
     priority.classList.add('priority');
 
     const box = document.createElement('div');
-    box.className = `box ${todoPriority}`;
-    box.textContent = todoPriority;
+    box.className = `box ${todo.priority}`;
+    box.textContent = todo.priority;
 
     const dueDate = document.createElement('div');
     dueDate.classList.add('todo-due-date');
-    dueDate.textContent = todoDueDate;
+    dueDate.textContent = todo.dueDate;
 
     const editSvg = document.createElement('div');
     editSvg.classList.add('edit');
@@ -171,7 +182,7 @@ function createDisplay(
   </svg>`;
 
     todoBar.appendChild(checkbox);
-    todoBar.appendChild(label);
+    todoBar.appendChild(todoLabel);
     todoBar.appendChild(todoRightPanel);
     todoRightPanel.appendChild(priority);
     priority.appendChild(box);
@@ -181,6 +192,8 @@ function createDisplay(
 
     return todoBar;
   }
+
+  todoIndex += 1;
 
   return display;
 }
