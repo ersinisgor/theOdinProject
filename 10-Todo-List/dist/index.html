@@ -43,7 +43,7 @@
       <!-- Navigation -->
       <nav>
         <div class="default-projects">
-          <div class="btn-container active">
+          <div class="btn-container active" data-name="allTasks">
             <button class="btn_nav">
               <i class="fa-solid fa-thumbtack"></i>All Tasks
             </button>
@@ -52,7 +52,7 @@
             </div>
           </div>
 
-          <div class="btn-container">
+          <div class="btn-container" data-name="today">
             <button class="btn_nav">
               <i class="fa-solid fa-calendar-day"></i>Today
             </button>
@@ -61,7 +61,7 @@
             </div>
           </div>
 
-          <div class="btn-container">
+          <div class="btn-container" data-name="thisWeek">
             <button class="btn_nav">
               <i class="fa-solid fa-calendar-week"></i>This Week
             </button>
@@ -74,7 +74,7 @@
         <h2>Projects</h2>
 
         <div class="users-projects">
-          <div class="btn-container">
+          <div class="btn-container" data-name="sport">
             <button class="btn_nav">
               <i class="fa-sharp fa-solid fa-list-check"></i>Sport
             </button>
@@ -134,7 +134,7 @@
 
           <div class="add-project-container">
             <div class="add">
-              <button class="btn_add">
+              <button class="btn_add add-project">
                 <i class="fa-sharp fa-solid fa-folder-plus"></i>
                 Add Project
               </button>
@@ -152,14 +152,27 @@
       </nav>
 
       <!-- Todo Display -->
-      <!-- <div class="display">
+      <div class="display">
         <div class="todos-display-container">
           <div class="top-row">
             <h2 class="top-project-name">All Tasks</h2>
           </div>
           <div class="todos-display">
 
-            <div class="todo-bar">
+            <!-- <div class="todo-bar">
+              <input class="todo" type='checkbox' />
+              <label></label>
+              <div class="todo-right-panel">
+                <div class="priority">
+                  <div class="box"></div>
+                </div>
+                <div class="todo-due-date"></div>
+                <div class="edit"></div>
+                <div class="delete"></div>
+              </div>
+            </div> -->
+
+            <!-- <div class="todo-bar">
               <input id='todo-1' class="todo" type='checkbox' />
               <label for="todo-1">Pay the bills before evening</label>
               <div class="todo-right-panel">
@@ -237,9 +250,9 @@
                   </svg>
                 </div>
               </div>
-            </div>
+            </div> -->
 
-            <div class="todo-bar">
+            <!-- <div class="todo-bar">
               <input id='todo-2' class="todo" type='checkbox' />
               <label for="todo-2">Go shopping after the work</label>
               <div class="todo-right-panel">
@@ -558,11 +571,14 @@
                   </svg>
                 </div>
               </div>
-            </div>
+            </div> -->
 
           </div>
+          <div class="add">
+            <button class="btn_add add-todo"><i class="fa-solid fa-circle-plus"></i>Add Todo</button>
+          </div>
         </div>
-      </div> -->
+      </div>
     </main>
     <footer>
       <p>

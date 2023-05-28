@@ -1,11 +1,3 @@
-import { display } from './Modules/CreateDOM';
+import { initButtons } from './Modules/UI';
 
-// const allTodos = document.querySelectorAll('.todo');
-
-// allTodos.forEach(todoCheck =>
-//   todoCheck.addEventListener('click', function () {
-//     makeTodoComplete(this);
-//   })
-// );
-
-display();
+initButtons();

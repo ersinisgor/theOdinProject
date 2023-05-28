@@ -153,6 +153,7 @@ i {
 
 .btn_nav {
   width: 90%;
+  text-transform: capitalize;
 }
 
 .btn-container {
@@ -360,7 +361,7 @@ input[type='checkbox'] {
   color: var(--secondary-color);
 }
 
-.priority .box.medium {
+.priority .box.med {
   background: var(--secondary-color);
   color: var(--tertiary-font);
 }
@@ -371,7 +372,7 @@ input[type='checkbox'] {
 }
 
 .todo-bar.complete .priority .box.high,
-.todo-bar.complete .priority .box.medium,
+.todo-bar.complete .priority .box.med,
 .todo-bar.complete .priority .box.low,
 .todo-bar.complete .todo-due-date {
   background: var(--primary-color);
