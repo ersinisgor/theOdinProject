@@ -24,4 +24,9 @@ let todos = [
   ),
 ];
 
+function getFormData() {
+  const todoTitle = document.querySelector('#todoTitle').value;
+}
+getFormData();
+
 export { todos };

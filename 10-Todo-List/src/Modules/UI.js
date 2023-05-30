@@ -51,6 +51,44 @@ function closeModal() {
 }
 
 //------------------------------------------------------------------------------------------------------------------------
+//---Add todo Modal içindeki priority'lere tıkladığında o priority'i seçer ve stilini değiştirir
+const priorities = document.querySelectorAll(
+  '.add-todo-modal-content .priority .box'
+);
+
+priorities.forEach(priority =>
+  priority.addEventListener('click', function () {
+    selectPriority(this);
+  })
+);
+
+function selectPriority(priority) {
+  priorities.forEach(box => (box.classList = ''));
+  priorities.forEach(box => box.classList.add('box'));
+  // priority.classList.add('selected');
+
+  const sec = document.querySelector('input[name="priorityCheck"]:checked');
+  if (sec) {
+    priorities.forEach(box => (box.style.border = 'none'));
+    if (priority.htmlFor === 'priorityLow') {
+      priority.classList.add('low');
+    } else if (priority.htmlFor === 'priorityMed') {
+      priority.classList.add('med');
+    } else if (priority.htmlFor === 'priorityHigh') {
+      priority.classList.add('high');
+    }
+  }
+  console.log(sec);
+  // if (priority.classList === '.selected.low') {
+  //   priority.classList.add('low');
+  // } else if (priority.htmlFor === 'priorityMed') {
+  //   priority.classList.add('med');
+  // } else if (priority.htmlFor === 'priorityHigh') {
+  //   priority.classList.add('high');
+  // }
+}
+
+//------------------------------------------------------------------------------------------------------------------------
 //----Todo'lara tıklanıldığında "todo-bar" ve "label"a "complete" sınıfını ekler
 function makeTodoComplete(check) {
   if (check.checked) {

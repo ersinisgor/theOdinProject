@@ -26,16 +26,24 @@
           </div>
           <div class="add-todo-modal-content">
             <div class="todo-title">
-              <label for="">Title</label>
-              <input type="text" name="" id="">
+              <label for="todoTitle">Title:</label>
+              <input type="text" name="" id="todoTitle">
             </div>
-            <div class="todo-priority">
-              <label for="">Priority</label>
-              <input type="text" name="" id="">
+            <div class="priority">
+              <div class="todo-priority-title">Priority:</div>
+              <input type="radio" name="priorityCheck" id="priorityLow" value="low">
+              <label for="priorityLow" class="box">Low</label>
+              <input type="radio" name="priorityCheck" id="priorityMed" value="med">
+              <label for="priorityMed" class="box">Med</label>
+              <input type="radio" name="priorityCheck" id="priorityHigh" value="high">
+              <label for="priorityHigh" class="box">High</label>
             </div>
             <div class="todo-due-date">
               <label for="">Due Date</label>
               <input type="date" name="" id="">
+            </div>
+            <div class="add">
+              <button class="btn_add add-new-todo">Add New Todo</button>
             </div>
           </div>
         </form>

@@ -100,7 +100,7 @@ main {
   /* border: 2px solid black; */
   border-radius: 1rem;
   box-shadow: 0px 0px 15px 3px var(--primary-font);
-  background: var(--primary-color);
+  background: var(--tertiary-font);
   transform: scale(0.5);
   transition: all 0.3s ease;
   opacity: 0;
@@ -130,6 +130,50 @@ main {
 
 .add-todo-modal-content {
   padding: 2rem;
+}
+
+.todo-title {
+  font-weight: 500;
+  padding: 0 1rem;
+}
+
+.add-todo-modal-content .priority {
+  cursor: default;
+}
+
+.todo-priority {
+  display: flex;
+}
+
+.todo-priority-title {
+  margin-right: 3rem;
+  font-size: 1.6rem;
+}
+
+input[type='radio'] {
+  position: relative;
+  left: 3.2rem;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.add-todo-modal-content .priority .box {
+  cursor: pointer;
+  margin-right: 1rem;
+  border: 1px solid var(--primary-font);
+}
+
+/* .box.checked {
+  border: 1px solid var(--border-2);
+} */
+
+.add-new-todo {
+  background: var(--primary-font);
+  color: var(--primary-color);
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
 }
 
 /*---Navigation Panel---*/
