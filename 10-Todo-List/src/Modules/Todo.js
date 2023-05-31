@@ -29,4 +29,4 @@ function getFormData() {
 }
 getFormData();
 
-export { todos };
+export { todos, Todo };

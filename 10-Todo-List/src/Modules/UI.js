@@ -1,4 +1,4 @@
-import { todos } from './Todo';
+import { todos, Todo } from './Todo';
 
 function initButtons() {
   //-----Nav alanında hangi projeye tıklandığını gösterir
@@ -50,26 +50,56 @@ function closeModal() {
   overlayAddTodoModal.firstElementChild.classList.remove('open');
 }
 
+//-----------------------------------------------------------------------------------------------------------------------
+//---Todoların data bilgisini form elemanından alır ve yeni bir todo olarak array içine ekler
+
+let todos2 = [];
+
+const todoForm = document.querySelector('.add-todo-modal');
+
+todoForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const todoTitleInput = document.getElementById('todoTitle').value;
+  const todoPriorityInput = document.querySelector(
+    'input[type="radio"]:checked'
+  ).value;
+  const todoDueDateInput = document.getElementById('todoDueDate').value;
+
+  const newTodo = new Todo(
+    `${todoTitleInput}`,
+    `${todoPriorityInput}`,
+    `${todoDueDateInput}`
+  );
+
+  todos2.push(newTodo);
+
+  todoForm.reset();
+  closeModal();
+
+  console.log(todos2);
+});
+
 //------------------------------------------------------------------------------------------------------------------------
 //---Add todo Modal içindeki priority'lere tıkladığında o priority'i seçer ve stilini değiştirir
-const priorities = document.querySelectorAll(
+const priorityOptions = document.querySelectorAll(
   '.add-todo-modal-content .priority .box'
 );
 
-priorities.forEach(priority =>
+priorityOptions.forEach(priority =>
   priority.addEventListener('click', function () {
     selectPriority(this);
   })
 );
 
 function selectPriority(priority) {
-  priorities.forEach(box => (box.classList = ''));
-  priorities.forEach(box => box.classList.add('box'));
+  priorityOptions.forEach(box => (box.classList = ''));
+  priorityOptions.forEach(box => box.classList.add('box'));
   // priority.classList.add('selected');
 
   const sec = document.querySelector('input[name="priorityCheck"]:checked');
   if (sec) {
-    priorities.forEach(box => (box.style.border = 'none'));
+    priorityOptions.forEach(box => (box.style.border = 'none'));
     if (priority.htmlFor === 'priorityLow') {
       priority.classList.add('low');
     } else if (priority.htmlFor === 'priorityMed') {
