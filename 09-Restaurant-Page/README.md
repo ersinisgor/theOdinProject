@@ -6,7 +6,7 @@ This project is a website for a restaurant created entirely using JavaScript. Th
 
 ## Demo
 
-You can see a live demo of the project 👉 https://restaurant-page-er.netlify.app/
+You can see a live demo of the project 👉 [https://restaurant-page-er.netlify.app/](https://restaurant-page-er.netlify.app/)
 
 ![Demo GIF](https://github.com/ersinisgor/theOdinProject/blob/main/09-Restaurant-Page/dist/img/gif/Restaurant%20Page.gif)
 
