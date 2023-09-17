@@ -8,7 +8,7 @@ This project aims to create an admin dashboard layout using CSS Grid. The dashbo
 
 You can see a live demo of the project 👉 [https://admin-dashboard-er.netlify.app/](https://admin-dashboard-er.netlify.app/).
 
-![Demo GIF](/img/gif/Admin%20Dashboard.gif)
+![Demo GIF](https://github.com/ersinisgor/theOdinProject/blob/main/06-Admin-Dashboard/img/gif/Admin%20Dashboard.gif)
 
 ## Features
 
