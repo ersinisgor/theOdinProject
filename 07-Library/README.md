@@ -8,7 +8,7 @@ This is a library project that allows you to manage your book collection. You ca
 
 You can see a live demo of the project 👉 [https://library-er.netlify.app/](https://library-er.netlify.app/)
 
-![DEMO GIF](https://github.com/ersinisgor/theOdinProject/tree/main/07-Library/img/gif/Library.gif)
+![Demo GIF](https://github.com/ersinisgor/theOdinProject/blob/main/07-Library/img/gif/Library.gif)
 
 ## Features
 
