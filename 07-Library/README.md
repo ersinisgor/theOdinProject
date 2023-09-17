@@ -1,8 +1,14 @@
 # Library Project
 
-Live Demo 👉 [https://library-er.netlify.app/](https://library-er.netlify.app/)
+## About
 
 This is a library project that allows you to manage your book collection. You can add, edit, and remove books from your library. Each book can be marked as "read" or "unread." This project helps you organize and keep track of your reading list.
+
+## Demo
+
+You can see a live demo of the project 👉 [https://library-er.netlify.app/](https://library-er.netlify.app/)
+
+![DEMO GIF](https://github.com/ersinisgor/theOdinProject/tree/main/07-Library/img/gif/Library.gif)
 
 ## Features
 
