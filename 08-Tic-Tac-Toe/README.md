@@ -1,8 +1,14 @@
 # Tic Tac Toe Game
 
-Live Demo 👉 [https://tictactoe-game-er.netlify.app/](https://tictactoe-game-er.netlify.app/)
+## About
 
 This is a simple Tic Tac Toe game that you can play in your browser. The game board is created using HTML and CSS, and gameplay logic is implemented in JavaScript.
+
+## Demo
+
+You can see a live demo of the project 👉 [https://tictactoe-game-er.netlify.app/](https://tictactoe-game-er.netlify.app/)
+
+![Demo GIF](https://github.com/ersinisgor/theOdinProject/blob/main/08-Tic-Tac-Toe/img/gif/Tic%20Tac%20Toe.gif)
 
 ## How to Play
 
