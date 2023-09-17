@@ -1,8 +1,14 @@
 # Restaurant Page
 
-Live Demo 👉 https://restaurant-page-er.netlify.app/
+## About
 
 This project is a website for a restaurant created entirely using JavaScript. The purpose of this project is to learn how to create a website using ES6 modules, webpack, and dividing the web page into small parts with each page having its own functions. The website includes a home page, a menu page, and a contact page.
+
+## Demo
+
+You can see a live demo of the project 👉 https://restaurant-page-er.netlify.app/
+
+![Demo GIF](https://github.com/ersinisgor/theOdinProject/blob/main/09-Restaurant-Page/dist/img/gif/Restaurant%20Page.gif)
 
 ## Technologies Used
 
