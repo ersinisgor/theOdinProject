@@ -2,13 +2,21 @@
 
 ## About
 
-The Sign Up Form page project is designed to provide a user-friendly and visually appealing registration experience for web applications. It offers a simple yet effective sign-up form that can be easily integrated into various projects.
+In this one-page project, which looks like a registration form, HTML form elements have been given a beautiful appearance with CSS. JavaScript was used to check that the password fields match each other. The Registration Form page project was built to provide a user-friendly and visually appealing registration experience for web applications. It offers a simple yet effective registration form that can be easily integrated into various projects.
 
 ## Demo
 
 You can see a live demo of the project 👉 [https://singup-form-er.netlify.app/](https://singup-form-er.netlify.app/)
 
-![Demo GIF](https://github.com/ersinisgor/theOdinProject/tree/main/05-Sing-up-Form/img/gif/Sign%20Up%20Form.gif)
+![Demo GIF](https://github.com/ersinisgor/theOdinProject/blob/main/05-Sing-up-Form/img/gif/Sign%20Up%20Form.gif)
+
+## Technologies Used
+
+This project was built using the following technologies:
+
+- HTML
+- CSS
+- JavaScript
 
 ## Form Elements
 
